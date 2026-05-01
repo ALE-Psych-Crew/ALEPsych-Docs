@@ -24,7 +24,7 @@ module.exports = defineConfig({
       left: [
         {
           text: 'Back to main site',
-          url: 'https://alepsych.gamer.gd/',
+          url: 'https://ale-psych-crew.github.io/ALE-Psych-Site/',
           className: 'back-to-main-site',
         },
       ],
