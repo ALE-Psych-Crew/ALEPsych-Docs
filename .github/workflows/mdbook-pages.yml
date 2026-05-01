@@ -38,10 +38,29 @@ jobs:
           cargo install mdbook-mermaid --version 0.15.0 --locked
           cargo install mdbook-pagetoc --version 0.1.8 --locked
 
-      - name: Install plugin static assets
+      - name: Sanity check configured static theme assets
         run: |
-          mdbook-admonish install book
-          mdbook-mermaid install book
+          python - <<'PY'
+          from pathlib import Path
+          import tomllib
+
+          config_path = Path("book/book.toml")
+          config = tomllib.loads(config_path.read_text(encoding="utf-8"))
+
+          html = config.get("output", {}).get("html", {})
+          static_refs = list(html.get("additional-css", [])) + list(html.get("additional-js", []))
+
+          missing = [ref for ref in static_refs if not (Path("book") / ref).exists()]
+          if missing:
+              raise SystemExit(
+                  "Missing static files referenced by book/book.toml:\n"
+                  + "\n".join(f"- {ref}" for ref in missing)
+              )
+
+          print("Static asset sanity check passed:")
+          for ref in static_refs:
+              print(f"- {ref}")
+          PY
 
       - name: Build site
         run: mdbook build book
