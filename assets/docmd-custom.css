@@ -1,15 +1,5 @@
-@font-face {
-  font-family: 'JetBrains Mono Local';
-  src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --font-family-mono: 'JetBrains Mono Local', 'JetBrains Mono', SFMono-Regular, Consolas, Menlo, monospace;
-
-  /* Light mode: neutral-first with subtle purple identity */
+  /* Light mode: DocMD defaults with subtle purple accents */
   --bg-color: #faf9fd;
   --text-color: #3d3750;
   --text-muted: #6f6785;
@@ -18,32 +8,15 @@
   --link-color-hover: #574393;
   --border-color: #e2def0;
 
-  --header-bg: color-mix(in srgb, #ffffff 92%, #6f56b7 8%);
-  --header-border: #ddd7ee;
-  --sidebar-bg: #f7f4fc;
-  --sidebar-text: #4e4565;
-  --sidebar-link-active-bg: color-mix(in srgb, #6f56b7 12%, #ffffff 88%);
-  --sidebar-link-active-text: #2d2441;
-
   --code-bg: #f2edf9;
   --code-text: #362d4f;
   --border-color-codeblock: #d7cee9;
 
-  --scrollbar-thumb: #d8d1ea;
-  --scrollbar-thumb-hover: #b9aed7;
-
-  --content-area-bg: transparent;
-  --content-area-radius: 0;
-  --content-area-shadow: none;
-  --content-area-border: none;
-
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 14px;
+  --focus-ring: color-mix(in srgb, #6f56b7 55%, white 45%);
 }
 
 :root[data-theme='dark'] {
-  /* Dark mode: readable charcoal with mild purple tint */
+  /* Dark mode: DocMD defaults with subtle purple accents */
   --bg-color: #12111a;
   --text-color: #c9c5d8;
   --text-muted: #a49eb8;
@@ -52,131 +25,23 @@
   --link-color-hover: #c4b0ff;
   --border-color: #2a2735;
 
-  --header-bg: color-mix(in srgb, #11101a 90%, #7a5ec6 10%);
-  --header-border: #2f2a3f;
-  --sidebar-bg: #151320;
-  --sidebar-text: #c3bed3;
-  --sidebar-link-active-bg: color-mix(in srgb, #7a5ec6 24%, #151320 76%);
-  --sidebar-link-active-text: #f3f0ff;
-
   --code-bg: #1c1828;
   --code-text: #ece7ff;
   --border-color-codeblock: #38324c;
 
-  --scrollbar-thumb: #3b3550;
-  --scrollbar-thumb-hover: #51486c;
+  --focus-ring: color-mix(in srgb, #7a5ec6 55%, black 45%);
 }
 
-body,
-button,
-input,
-select,
-textarea {
-  font-family: var(--font-family-sans);
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
-code,
-pre,
-kbd,
-samp {
-  font-family: var(--font-family-mono);
-}
-
-/* Keep surfaces legible, avoid fragile layout overrides */
-.page-header,
-.sidebar,
-.docmd-menubar,
-.main-content,
-.toc-container,
-.docmd-search-box {
-  border-color: var(--border-color);
-}
-
-.main-content,
-.docmd-container.callout,
-.table-wrapper,
-pre {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-}
-
-/* Centered logo treatment */
-.sidebar-header {
-  height: auto;
-  padding-block: 0.4rem;
-  margin-bottom: 0.6rem;
-}
-
-.sidebar-header h1 {
-  margin: 0;
-  line-height: 0;
-  font-size: 0; /* hides any fallback title text beside logo */
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar-header .logo-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-header .logo-link img {
-  max-height: 42px;
-  width: auto;
-  margin: 0 auto;
-}
-
-/* Remove side title text near header logo area */
-.header-titles-wrapper {
-  display: none;
-}
-
-/* Menubar link treatment: keep "Back to main site" clean and quiet */
 .back-to-main-site {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid transparent;
-  border-radius: var(--radius-md);
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.92rem;
-}
-
-.back-to-main-site:hover,
-.back-to-main-site:focus-visible {
-  color: var(--text-color);
-  border-color: var(--border-color);
-  background: color-mix(in srgb, var(--sidebar-link-active-bg) 70%, transparent);
-}
-
-/* Better TOC heading clarity */
-.toc-title {
-  display: block;
-  margin: 0 0 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-}
-
-.toc-link {
-  border-radius: var(--radius-md);
-}
-
-/* Keep header/nav sizing tidy and consistent */
-.docmd-menubar {
-  min-height: 2.75rem;
-}
-
-.page-header {
-  padding-block: 0.6rem;
-}
-
-@media (max-width: 900px) {
-  .sidebar-header .logo-link img {
-    max-height: 36px;
-  }
+  color: inherit;
 }
