@@ -1,0 +1,4 @@
+[
+  { "title": "Inicio", "path": "/" },
+  { "title": "Vitrina de Plugins", "path": "/plugin-showcase" }
+]

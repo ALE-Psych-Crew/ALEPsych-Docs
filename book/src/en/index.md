@@ -10,12 +10,12 @@ ALE Psych is a Friday Night Funkin' engine inspired by Psych Engine, focused on 
 
 - [Get ALE Psych builds](https://github.com/ALE-Psych-Crew/ALE-Psych)
 - [Open the main ALE Psych site](https://alepsych.gamer.gd/)
-- [Browse Plugin Showcase](/en/plugin-showcase)
+- [Browse Plugin Showcase](./plugin-showcase)
 
 ## Key Documentation Links
 
-- [Plugin Showcase](/en/plugin-showcase)
-- [404 Test Page](/en/404)
+- [Plugin Showcase](./plugin-showcase)
+- [404 Test Page](./404)
 
 ## Why ALE Psych
 

@@ -39,18 +39,11 @@ module.exports = defineConfig({
       style: 'minimal',
     },
   },
-  navigation: [
-    { title: 'English Home', path: '/', icon: 'home' },
-    { title: 'English Plugin Showcase', path: '/plugin-showcase', icon: 'wand' },
-    { title: 'Inicio (ES)', path: '/es/', icon: 'languages' },
-    { title: 'Vitrina de Plugins (ES)', path: '/es/plugin-showcase', icon: 'wand' },
-  ],
   i18n: {
     default: 'en',
-    // Use locale-specific source directories under book/src (en, es)
-    // so routes are explicit and stable at /en/* and /es/*.
-    inPlace: true,
+    position: 'options-menu',
     stringMode: false,
+    inPlace: false,
     locales: [
       {
         id: 'en',
