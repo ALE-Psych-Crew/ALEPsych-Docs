@@ -1,6 +1,6 @@
-# ALEPsych Docs
+# ALE Psych Docs
 
-- This repository contains the ALEPsych documentation site built with **docmd**.
+- This repository contains the ALE Psych documentation site built with **docmd**.
 - Source content lives in `book/src`.
 
 ## Migration notes (mdBook → docmd)

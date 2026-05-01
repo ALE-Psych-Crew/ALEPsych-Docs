@@ -1,7 +1,8 @@
-# ALEPsych Docs
+# ALE Psych Documentation
 
-Welcome to the ALEPsych documentation site powered by **docmd**.
+Choose your language:
 
-Use the navigation to browse available documentation sections.
+- [English Docs](/en/)
+- [Documentación en Español](/es/)
 
-Start with [Plugin Showcase](/plugin-showcase) to validate callouts and Mermaid behavior.
+You can also visit the [ALE Psych main site](https://alepsych.gamer.gd/).
