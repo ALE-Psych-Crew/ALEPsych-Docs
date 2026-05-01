@@ -17,17 +17,17 @@
 
 :root[data-theme='dark'] {
   /* Dark mode: DocMD defaults with subtle purple accents */
-  --bg-color: #12111a;
+  --bg-color: #141320;
   --text-color: #c9c5d8;
   --text-muted: #a49eb8;
   --text-heading: #f3f0ff;
   --link-color: #b09af0;
   --link-color-hover: #c4b0ff;
-  --border-color: #2a2735;
+  --border-color: #2d2a3a;
 
-  --code-bg: #1c1828;
+  --code-bg: #1e1b2b;
   --code-text: #ece7ff;
-  --border-color-codeblock: #38324c;
+  --border-color-codeblock: #3a3550;
 
   --focus-ring: color-mix(in srgb, #7a5ec6 55%, black 45%);
 }
@@ -44,4 +44,8 @@ textarea:focus-visible,
 
 .back-to-main-site {
   color: inherit;
+}
+
+.logo-link {
+  padding-inline: 0.2rem;
 }
