@@ -25,7 +25,6 @@ additional-css = [
   "theme/custom.css",
 ]
 additional-js = [
-  "theme/mermaid.min.js",
   "theme/mermaid-init.js",
   "theme/pagetoc.js",
 ]
