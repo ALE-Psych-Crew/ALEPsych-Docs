@@ -6,8 +6,8 @@ module.exports = defineConfig({
   src: 'book/src',
   out: 'site',
   logo: {
-    light: 'assets/ale-psych-logo-dark.png',
-    dark: 'assets/ale-psych-logo-light.png',
+    light: 'assets/ale-psych-logo-light.png',
+    dark: 'assets/ale-psych-logo-dark.png',
     alt: 'ALEPsych',
   },
   theme: {
