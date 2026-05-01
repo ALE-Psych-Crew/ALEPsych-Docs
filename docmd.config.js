@@ -17,7 +17,11 @@ module.exports = defineConfig({
       left: [
         { text: 'Home', url: '/' },
         { text: 'Plugin Showcase', url: '/plugin-showcase' },
-        { text: '← Back to main site', url: 'https://alepsych.gamer.gd/' },
+        {
+          text: '← Back to main site',
+          url: 'https://alepsych.gamer.gd/',
+          className: 'back-to-main-site',
+        },
       ],
     },
     header: {

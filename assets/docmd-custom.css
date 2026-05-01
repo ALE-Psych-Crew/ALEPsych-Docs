@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'Jetbrains';
-  src: url('https://alepsych.gamer.gd/assets/fonts/jetbrains.ttf');
+  src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -15,6 +17,8 @@
   --accent: #a149ff;
   --accent-2: #cf92ff;
   --accent-3: #7026c4;
+  --shadow-soft: 0 12px 24px rgba(0, 0, 0, 0.24);
+  --shadow-strong: 0 20px 35px rgba(0, 0, 0, 0.35);
 }
 
 html,
@@ -28,68 +32,227 @@ textarea {
 
 body {
   color: var(--text);
+  line-height: 1.45;
   background:
     radial-gradient(circle at 8% -10%, rgba(179, 99, 255, 0.24), transparent 40%),
     radial-gradient(circle at 90% 5%, rgba(112, 38, 196, 0.32), transparent 36%),
     linear-gradient(180deg, #120c2a 0%, var(--bg) 55%, #0a0618 100%);
 }
 
+.content-theme-cover,
+.content-area,
+.main-content-wrapper {
+  background: transparent;
+}
+
 a {
   color: var(--accent-2);
+  transition: color 0.2s ease;
 }
 
 a:hover {
   color: #eed6ff;
 }
 
-.site-header,
-.page-header,
-.menu-bar,
 .sidebar,
-.sidebar-nav {
+.docmd-menubar,
+.page-header,
+.toc-container,
+.docmd-search-box {
   background: linear-gradient(180deg, rgba(34, 24, 74, 0.96), rgba(20, 14, 44, 0.95));
-  border-color: var(--line) !important;
+  border-color: var(--line);
 }
 
 .sidebar {
   border-right: 1px solid var(--line);
 }
 
-.sidebar-nav a,
-.menu-link {
-  color: var(--text-soft);
-  border-radius: 10px;
+.sidebar-header {
+  border-bottom: 1px solid rgba(206, 170, 255, 0.2);
 }
 
+.sidebar-header h1 a,
+.header-title {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.sidebar-header h1 a::before,
+.header-title::before,
+.sidebar-header .site-title::before,
+.docmd-menubar .header-title a::before {
+  content: '';
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 8px;
+  background: url('./ale-psych-logo.png') center/cover no-repeat;
+  box-shadow: 0 0 0 1px rgba(220, 188, 255, 0.2);
+}
+
+.menubar-link,
+.sidebar-nav a,
+.toc-link,
+.theme-toggle-button,
+.docmd-search-trigger,
+.sidebar-toggle-button {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  color: var(--text-soft);
+  transition: all 0.2s ease;
+}
+
+.menubar-link:hover,
 .sidebar-nav a:hover,
 .sidebar-nav a.active,
-.menu-link:hover {
+.toc-link:hover,
+.toc-link.active,
+.theme-toggle-button:hover,
+.docmd-search-trigger:hover,
+.sidebar-toggle-button:hover {
+  color: #fff;
+  border-color: rgba(216, 179, 255, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.menubar-link.active,
+.menubar-link[aria-current='page'] {
   color: #fff;
   background: rgba(182, 122, 255, 0.15);
+  border-color: rgba(214, 172, 255, 0.35);
+}
+
+h1,
+h2,
+h3 {
+  color: #fff;
+  line-height: 1.1;
+}
+
+.main-content,
+.toc-container,
+.docmd-container.callout,
+pre,
+table,
+.mermaid {
+  background: linear-gradient(180deg, rgba(35, 24, 74, 0.92), rgba(24, 16, 50, 0.95));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.main-content {
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+pre {
+  padding: 0.9rem;
+  overflow-x: auto;
+}
+
+pre code {
+  border: 0;
+  background: transparent;
 }
 
 code {
   color: #f6e8ff;
   background: rgba(207, 146, 255, 0.12);
   border: 1px solid rgba(207, 146, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.1rem 0.35rem;
 }
 
-pre code {
-  border: 0;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
 }
 
-a[href='https://alepsych.gamer.gd/'] {
+th,
+td {
+  border: 1px solid rgba(206, 170, 255, 0.2);
+  padding: 0.65rem 0.7rem;
+}
+
+th {
+  background: rgba(182, 122, 255, 0.18);
+  color: #fff;
+}
+
+.docmd-container.callout {
+  padding: 1rem 1.1rem;
+}
+
+.callout-title {
+  color: #f1d9ff;
+  font-weight: 700;
+}
+
+.callout-tip {
+  border-color: rgba(148, 255, 198, 0.4);
+}
+
+.callout-warning {
+  border-color: rgba(255, 209, 145, 0.4);
+}
+
+.mermaid {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+}
+
+.back-to-main-site,
+.docmd-menubar a[href^='https://alepsych.gamer.gd'],
+.docmd-menubar a[href^='http://alepsych.gamer.gd'] {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 0.2rem 0.65rem;
-  border-radius: 10px;
+  min-height: 38px;
+  padding: 0 0.8rem;
+  border-radius: 12px;
   color: #fff;
   border: 1px solid rgba(223, 194, 255, 0.3);
   background: linear-gradient(180deg, var(--accent) 0%, var(--accent-3) 100%);
+  box-shadow: var(--shadow-soft);
 }
 
-a[href='https://alepsych.gamer.gd/']:hover {
+.back-to-main-site:hover,
+.docmd-menubar a[href^='https://alepsych.gamer.gd']:hover,
+.docmd-menubar a[href^='http://alepsych.gamer.gd']:hover {
   color: #fff;
-  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-strong);
+}
+
+.page-footer {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 85% -20%, rgba(136, 67, 216, 0.2), transparent 45%),
+    linear-gradient(180deg, #120b2a, #0b071a);
+}
+
+.footer-content {
+  color: #bfabd8;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding: 0.95rem;
+  }
+
+  .sidebar-header h1 a::before,
+  .header-title::before {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
 }
