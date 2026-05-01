@@ -1,0 +1,31 @@
+[book]
+title = "ALEPsych Docs"
+language = "en"
+multilingual = false
+src = "src"
+
+[build]
+build-dir = "book"
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[preprocessor.pagetoc]
+command = "mdbook-pagetoc"
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+additional-css = [
+  "theme/mdbook-admonish.css",
+  "theme/pagetoc.css",
+  "theme/custom.css",
+]
+additional-js = [
+  "theme/mermaid.min.js",
+  "theme/mermaid-init.js",
+  "theme/pagetoc.js",
+]
