@@ -1,0 +1,13 @@
+.pagetoc {
+  border-left: 1px solid rgba(206, 170, 255, 0.26);
+  padding-left: 0.75rem;
+}
+
+.pagetoc a {
+  color: #d5c6f5;
+}
+
+.pagetoc a:hover,
+.pagetoc a.active {
+  color: #cf92ff;
+}
