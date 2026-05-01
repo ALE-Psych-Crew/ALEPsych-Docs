@@ -1,25 +1,15 @@
-# ALE Psych Docs
+# ALE Psych Documentation
 
-- This repository contains the ALE Psych documentation site built with **docmd**.
-- Source content lives in `book/src`.
+![ALE Psych Logo](assets/ale-psych-logo-dark.png)
 
-## Migration notes (mdBook → docmd)
+Official documentation site for **ALE Psych**, powered by docmd.
 
-- Removed mdBook config/plugins/workflow and replaced them with docmd equivalents.
-- New config file: `docmd.config.js`.
-- New build output directory: `site/`.
-- New GitHub Pages workflow: `.github/workflows/docmd-pages.yml`.
+- Source content: `book/src`
+- Live site: https://ale-psych-crew.github.io/ALEPsych-Docs
 
-## Local development
-
-1. Install dependencies:
-   - `npm install`
-2. Run local dev server:
-   - `npm run dev`
-3. Build static site:
-   - `npm run build`
-
-## Deployment
-
-- Deployment is handled by GitHub Actions workflow at `.github/workflows/docmd-pages.yml`.
-- One-time repo setting: **Settings → Pages → Source = GitHub Actions**.
+## Quick Start
+```bash
+npm install
+npm run dev
+npm run build
+```
