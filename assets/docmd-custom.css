@@ -19,6 +19,10 @@
   --accent: #a149ff;
   --accent-2: #cf92ff;
   --accent-3: #7026c4;
+  --link-hover: #f3deff;
+  --code-fg: #f6e8ff;
+  --code-bg: rgba(207, 146, 255, 0.12);
+  --code-border: rgba(207, 146, 255, 0.28);
   --shadow-soft: 0 12px 24px rgba(0, 0, 0, 0.24);
   --shadow-strong: 0 20px 35px rgba(0, 0, 0, 0.35);
 }
@@ -35,6 +39,10 @@
   --accent: #7c35d8;
   --accent-2: #6330b8;
   --accent-3: #4f2592;
+  --link-hover: #4f2592;
+  --code-fg: #341c5d;
+  --code-bg: #ede2ff;
+  --code-border: #bca2e8;
   --shadow-soft: 0 10px 20px rgba(54, 27, 109, 0.1);
   --shadow-strong: 0 16px 30px rgba(54, 27, 109, 0.2);
 }
@@ -76,7 +84,7 @@ a {
 }
 
 a:hover {
-  color: #eed6ff;
+  color: var(--link-hover);
 }
 
 .sidebar,
@@ -205,9 +213,9 @@ pre code {
 }
 
 code {
-  color: #f6e8ff;
-  background: rgba(207, 146, 255, 0.12);
-  border: 1px solid rgba(207, 146, 255, 0.2);
+  color: var(--code-fg);
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
   border-radius: 8px;
   padding: 0.1rem 0.35rem;
 }
@@ -279,6 +287,10 @@ th {
 
 .docmd-menubar .menubar-link {
   width: fit-content;
+}
+
+.docmd-menubar .menubar-link:not(.back-to-main-site) {
+  display: none;
 }
 
 .toc-title {
