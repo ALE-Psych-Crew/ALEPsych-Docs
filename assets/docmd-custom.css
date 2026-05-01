@@ -1,333 +1,182 @@
 @font-face {
-  font-family: 'Jetbrains';
+  font-family: 'JetBrains Mono Local';
   src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-:root,
-[data-theme='dark'] {
-  --bg: #0d0820;
-  --bg-soft: #171033;
-  --panel: #1d1540;
-  --panel-2: #2a1e5c;
-  --line: rgba(206, 170, 255, 0.26);
-  --text: #f6efff;
-  --text-soft: #dfd1fa;
-  --text-muted: #cdbbe9;
-  --accent: #a149ff;
-  --accent-2: #cf92ff;
-  --accent-3: #7026c4;
-  --link-hover: #f3deff;
-  --code-fg: #f6e8ff;
-  --code-bg: rgba(207, 146, 255, 0.12);
-  --code-border: rgba(207, 146, 255, 0.28);
-  --shadow-soft: 0 12px 24px rgba(0, 0, 0, 0.24);
-  --shadow-strong: 0 20px 35px rgba(0, 0, 0, 0.35);
+:root {
+  --font-family-mono: 'JetBrains Mono Local', 'JetBrains Mono', SFMono-Regular, Consolas, Menlo, monospace;
+
+  /* Light mode: neutral-first with subtle purple identity */
+  --bg-color: #faf9fd;
+  --text-color: #3d3750;
+  --text-muted: #6f6785;
+  --text-heading: #241d38;
+  --link-color: #6750a8;
+  --link-color-hover: #574393;
+  --border-color: #e2def0;
+
+  --header-bg: color-mix(in srgb, #ffffff 92%, #6f56b7 8%);
+  --header-border: #ddd7ee;
+  --sidebar-bg: #f7f4fc;
+  --sidebar-text: #4e4565;
+  --sidebar-link-active-bg: color-mix(in srgb, #6f56b7 12%, #ffffff 88%);
+  --sidebar-link-active-text: #2d2441;
+
+  --code-bg: #f2edf9;
+  --code-text: #362d4f;
+  --border-color-codeblock: #d7cee9;
+
+  --scrollbar-thumb: #d8d1ea;
+  --scrollbar-thumb-hover: #b9aed7;
+
+  --content-area-bg: transparent;
+  --content-area-radius: 0;
+  --content-area-shadow: none;
+  --content-area-border: none;
+
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
 }
 
-[data-theme='light'] {
-  --bg: #f7f3ff;
-  --bg-soft: #ede5ff;
-  --panel: #ffffff;
-  --panel-2: #f3ebff;
-  --line: rgba(100, 63, 171, 0.22);
-  --text: #1f1538;
-  --text-soft: #35205c;
-  --text-muted: #4e3a72;
-  --accent: #7c35d8;
-  --accent-2: #6330b8;
-  --accent-3: #4f2592;
-  --link-hover: #4f2592;
-  --code-fg: #341c5d;
-  --code-bg: #ede2ff;
-  --code-border: #bca2e8;
-  --shadow-soft: 0 10px 20px rgba(54, 27, 109, 0.1);
-  --shadow-strong: 0 16px 30px rgba(54, 27, 109, 0.2);
+:root[data-theme='dark'] {
+  /* Dark mode: readable charcoal with mild purple tint */
+  --bg-color: #12111a;
+  --text-color: #c9c5d8;
+  --text-muted: #a49eb8;
+  --text-heading: #f3f0ff;
+  --link-color: #b09af0;
+  --link-color-hover: #c4b0ff;
+  --border-color: #2a2735;
+
+  --header-bg: color-mix(in srgb, #11101a 90%, #7a5ec6 10%);
+  --header-border: #2f2a3f;
+  --sidebar-bg: #151320;
+  --sidebar-text: #c3bed3;
+  --sidebar-link-active-bg: color-mix(in srgb, #7a5ec6 24%, #151320 76%);
+  --sidebar-link-active-text: #f3f0ff;
+
+  --code-bg: #1c1828;
+  --code-text: #ece7ff;
+  --border-color-codeblock: #38324c;
+
+  --scrollbar-thumb: #3b3550;
+  --scrollbar-thumb-hover: #51486c;
 }
 
-html,
 body,
 button,
 input,
 select,
 textarea {
-  font-family: 'Jetbrains', 'JetBrains Mono', monospace;
+  font-family: var(--font-family-sans);
 }
 
-body {
-  color: var(--text);
-  line-height: 1.45;
-  background:
-    radial-gradient(circle at 8% -10%, rgba(179, 99, 255, 0.24), transparent 40%),
-    radial-gradient(circle at 90% 5%, rgba(112, 38, 196, 0.32), transparent 36%),
-    linear-gradient(180deg, #120c2a 0%, var(--bg) 55%, #0a0618 100%);
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-family-mono);
 }
 
-[data-theme='light'] body {
-  background:
-    radial-gradient(circle at 8% -10%, rgba(124, 53, 216, 0.16), transparent 42%),
-    radial-gradient(circle at 92% 8%, rgba(107, 69, 191, 0.18), transparent 35%),
-    linear-gradient(180deg, #fdfbff 0%, var(--bg) 65%, #eee5ff 100%);
-}
-
-.content-theme-cover,
-.content-area,
-.main-content-wrapper {
-  background: transparent;
-}
-
-a {
-  color: var(--accent-2);
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--link-hover);
-}
-
+/* Keep surfaces legible, avoid fragile layout overrides */
+.page-header,
 .sidebar,
 .docmd-menubar,
-.page-header,
+.main-content,
 .toc-container,
 .docmd-search-box {
-  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 96%, #000 4%), color-mix(in srgb, var(--bg-soft) 94%, #000 6%));
-  border-color: var(--line);
+  border-color: var(--border-color);
 }
 
-.sidebar {
-  border-right: 1px solid var(--line);
+.main-content,
+.docmd-container.callout,
+.table-wrapper,
+pre {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
 }
 
+/* Centered logo treatment */
 .sidebar-header {
-  border-bottom: 1px solid rgba(206, 170, 255, 0.2);
+  height: auto;
+  padding-block: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
-.sidebar-header h1 a,
-.header-title {
-  color: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.01em;
+.sidebar-header h1 {
+  margin: 0;
+  line-height: 0;
+  font-size: 0; /* hides any fallback title text beside logo */
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-header .logo-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: center;
 }
 
-.sidebar-header h1 a::before,
-.header-title::before,
-.sidebar-header .site-title::before,
-.docmd-menubar .header-title a::before {
-  content: '';
-  width: clamp(124px, 16vw, 172px);
-  height: clamp(28px, 3.8vw, 42px);
-  flex: 0 0 auto;
-  background: url('./ale-psych-logo.png') left center/contain no-repeat;
+.sidebar-header .logo-link img {
+  max-height: 42px;
+  width: auto;
+  margin: 0 auto;
 }
 
+/* Remove side title text near header logo area */
 .header-titles-wrapper {
   display: none;
 }
 
-.menubar-link,
-.sidebar-nav a,
-.toc-link,
-.theme-toggle-button,
-.docmd-search-trigger,
-.sidebar-toggle-button {
-  border-radius: 10px;
-  border: 1px solid transparent;
-  color: var(--text-soft);
-  transition: all 0.2s ease;
-}
-
-.main-content,
-.sidebar,
-.page-header,
-.docmd-menubar,
-.toc-container,
-.docmd-search-box,
-.docmd-breadcrumbs,
-.footer-content,
-p,
-li,
-td,
-.toc-title,
-.toc-link,
-.menubar-link,
-.sidebar-nav a {
-  color: var(--text-soft);
-}
-
-.menubar-link:hover,
-.sidebar-nav a:hover,
-.sidebar-nav a.active,
-.toc-link:hover,
-.toc-link.active,
-.theme-toggle-button:hover,
-.docmd-search-trigger:hover,
-.sidebar-toggle-button:hover {
-  color: #fff;
-  border-color: rgba(216, 179, 255, 0.3);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.menubar-link.active,
-.menubar-link[aria-current='page'] {
-  color: #fff;
-  background: rgba(182, 122, 255, 0.15);
-  border-color: rgba(214, 172, 255, 0.35);
-}
-
-h1,
-h2,
-h3 {
-  color: var(--text);
-  line-height: 1.1;
-}
-
-.main-content,
-.toc-container,
-.docmd-container.callout,
-pre,
-table,
-.mermaid {
-  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 95%, #fff 5%), color-mix(in srgb, var(--bg-soft) 94%, #000 6%));
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-}
-
-.main-content {
-  padding: 1.25rem 1.25rem 1rem;
-}
-
-pre {
-  padding: 0.9rem;
-  overflow-x: auto;
-}
-
-pre code {
-  border: 0;
-  background: transparent;
-}
-
-code {
-  color: var(--code-fg);
-  background: var(--code-bg);
-  border: 1px solid var(--code-border);
-  border-radius: 8px;
-  padding: 0.1rem 0.35rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-}
-
-th,
-td {
-  border: 1px solid rgba(206, 170, 255, 0.2);
-  padding: 0.65rem 0.7rem;
-}
-
-th {
-  background: rgba(182, 122, 255, 0.18);
-  color: #fff;
-}
-
-.docmd-container.callout {
-  padding: 1rem 1.1rem;
-}
-
-.callout-title {
-  color: #f1d9ff;
-  font-weight: 700;
-}
-
-.callout-tip {
-  border-color: rgba(148, 255, 198, 0.4);
-}
-
-.callout-warning {
-  border-color: rgba(255, 209, 145, 0.4);
-}
-
-.mermaid {
-  padding: 1rem;
-  margin: 1rem 0;
-}
-
-.mermaid svg {
-  max-width: 100%;
-}
-
-.back-to-main-site,
-.docmd-menubar a[href^='https://alepsych.gamer.gd'],
-.docmd-menubar a[href^='http://alepsych.gamer.gd'] {
+/* Menubar link treatment: keep "Back to main site" clean and quiet */
+.back-to-main-site {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  padding: 0 0.8rem;
-  border-radius: 12px;
-  color: #fff;
-  border: 1px solid rgba(223, 194, 255, 0.3);
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-3) 100%);
-  box-shadow: var(--shadow-soft);
-}
-
-.docmd-menubar {
-  border-bottom: 1px solid var(--line);
-}
-
-.menubar-left {
-  width: 100%;
-}
-
-.docmd-menubar .menubar-link {
-  width: fit-content;
-}
-
-.docmd-menubar .menubar-link:not(.back-to-main-site) {
-  display: none;
-}
-
-.toc-title {
-  text-transform: none;
-  letter-spacing: 0.01em;
-  font-size: 1rem;
-  color: var(--text);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
 }
 
 .back-to-main-site:hover,
-.docmd-menubar a[href^='https://alepsych.gamer.gd']:hover,
-.docmd-menubar a[href^='http://alepsych.gamer.gd']:hover {
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-strong);
+.back-to-main-site:focus-visible {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background: color-mix(in srgb, var(--sidebar-link-active-bg) 70%, transparent);
 }
 
-.page-footer {
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 85% -20%, rgba(136, 67, 216, 0.2), transparent 45%),
-    linear-gradient(180deg, #120b2a, #0b071a);
-}
-
-.footer-content {
+/* Better TOC heading clarity */
+.toc-title {
+  display: block;
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
 }
 
-@media (max-width: 900px) {
-  .main-content {
-    padding: 0.95rem;
-  }
+.toc-link {
+  border-radius: var(--radius-md);
+}
 
-  .sidebar-header h1 a::before,
-  .header-title::before {
-    width: clamp(110px, 42vw, 150px);
-    height: 30px;
+/* Keep header/nav sizing tidy and consistent */
+.docmd-menubar {
+  min-height: 2.75rem;
+}
+
+.page-header {
+  padding-block: 0.6rem;
+}
+
+@media (max-width: 900px) {
+  .sidebar-header .logo-link img {
+    max-height: 36px;
   }
 }

@@ -5,6 +5,11 @@ module.exports = defineConfig({
   url: 'https://ale-psych-crew.github.io/ALEPsych-Docs',
   src: 'book/src',
   out: 'site',
+  logo: {
+    light: 'assets/ale-psych-logo.png',
+    dark: 'assets/ale-psych-logo.png',
+    alt: 'ALEPsych',
+  },
   theme: {
     name: 'default',
     appearance: 'system',
