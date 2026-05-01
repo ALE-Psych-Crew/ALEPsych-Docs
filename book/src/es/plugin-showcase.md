@@ -1,4 +1,4 @@
-# Demostración de Plugins
+# Vitrina de Plugins
 
 Esta página verifica en un solo lugar el conjunto de funciones migradas de docmd.
 
