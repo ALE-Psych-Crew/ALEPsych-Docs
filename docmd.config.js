@@ -3,6 +3,7 @@ const { defineConfig } = require('@docmd/core');
 module.exports = defineConfig({
   title: 'ALE Psych Docs',
   url: 'https://ale-psych-crew.github.io/ALEPsych-Docs',
+  base: '/ALEPsych-Docs/',
   src: 'book/src',
   out: 'site',
   logo: {
