@@ -1,27 +1,27 @@
 # Plugin Showcase
 
-This page verifies all configured mdBook plugins in one place.
+This page verifies the migrated docmd feature set in one place.
 
-## Admonish
+## Callouts
 
-```admonish tip title="Admonish is active"
-If this block is styled as a callout card, `mdbook-admonish` is working.
-```
+::: callout tip "Callout rendering"
+If this block is styled as a callout card, docmd callouts are working.
+:::
 
-```admonish warning title="CI note"
-Remember to run `mdbook-admonish install book` after plugin upgrades.
-```
+::: callout warning "CI note"
+This docs site now builds with `docmd build` in GitHub Actions.
+:::
 
 ## Mermaid
 
 ```mermaid
 flowchart TD
-    A[Author edits Markdown] --> B[mdBook preprocessors]
-    B --> C[Admonish + Mermaid + Page TOC]
+    A[Author edits Markdown] --> B[docmd renderer]
+    B --> C[Callouts + Mermaid + Themed UI]
     C --> D[Static site output]
 ```
 
-## Page TOC headings
+## Heading navigation
 
 ### Section One
 

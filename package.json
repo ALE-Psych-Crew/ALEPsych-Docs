@@ -1,0 +1,12 @@
+{
+  "name": "alepsych-docs",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "docmd dev",
+    "build": "docmd build"
+  },
+  "devDependencies": {
+    "@docmd/core": "0.7.7"
+  }
+}
