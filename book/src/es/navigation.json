@@ -1,5 +1,9 @@
 [
   {
+    "title": "Inicio",
+    "path": "/"
+  },
+  {
     "title": "Aclaraciones",
     "path": "/docs"
   },
