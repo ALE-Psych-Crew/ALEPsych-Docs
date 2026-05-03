@@ -36,7 +36,7 @@ module.exports = {
   onAfterParse(html, frontmatter = {}) {
     const author = frontmatter.author;
     const authorUrl = frontmatter.author_url;
-    const authorAvatar = frontmatter.author_avatar;
+    const authorAvatar = frontmatter.author_avatar || (author ? `https://github.com/${author}.png?size=64` : null);
     const lang = frontmatter.lang || 'en';
 
     if (!author || !authorUrl) {
@@ -45,6 +45,7 @@ module.exports = {
 
     const translator = frontmatter.translator;
     const translatorUrl = frontmatter.translator_url;
+    const translatorAvatar = frontmatter.translator_avatar || (translator ? `https://github.com/${translator}.png?size=64` : null);
 
     const byLabel = lang === 'es' ? 'Escrito por' : 'Written by';
     const trLabel = lang === 'es' ? 'Traducido por' : 'Translated by';
@@ -53,8 +54,12 @@ module.exports = {
       ? `<a href="${authorUrl}" target="_blank" rel="noopener noreferrer"><img src="${authorAvatar}" alt="${author}" class="ale-credit-avatar"></a>`
       : '';
 
+    const translatorAvatarHtml = translatorAvatar
+      ? `<a href="${translatorUrl}" target="_blank" rel="noopener noreferrer"><img src="${translatorAvatar}" alt="${translator}" class="ale-credit-avatar"></a>`
+      : '';
+
     const translatorHtml = translator && translatorUrl
-      ? `<span class="ale-credit-sep">•</span><span>${trLabel} <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">${translator}</a></span>`
+      ? `<span class="ale-credit-sep">•</span>${translatorAvatarHtml}<span>${trLabel} <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">${translator}</a></span>`
       : '';
 
     const creditHtml = `
