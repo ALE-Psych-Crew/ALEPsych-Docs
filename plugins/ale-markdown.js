@@ -4,7 +4,7 @@ module.exports = {
     version: '1.0.0',
     capabilities: ['markdown']
   },
-  markdownSetup(md) {
+  markdownSetup(md, pluginOptions = {}) {
     const emojis = [
       'alejito',
       'aySi',
@@ -26,12 +26,14 @@ module.exports = {
       return tokens[idx].content;
     };
 
+    const assetBase = 'https://ale-psych-crew.github.io/ALEPsych-Docs/assets/emojis/';
+
     md.renderer.rules.text = function (tokens, idx, options, env, self) {
       let content = defaultRender(tokens, idx, options, env, self);
 
       content = content.replace(/:([a-zA-Z0-9_]+):/g, (match, name) => {
         if (emojis.includes(name)) {
-          return `<img src="/assets/emojis/${name}.png" class="emoji" alt="${name}">`;
+          return `<img src="${assetBase}${name}.png" class="emoji" alt="${name}">`;
         }
 
         return match;
