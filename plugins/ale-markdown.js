@@ -55,11 +55,11 @@ module.exports = {
       : '';
 
     const translatorAvatarHtml = translatorAvatar
-      ? `<a href="${translatorUrl}" target="_blank" rel="noopener noreferrer"><img src="${translatorAvatar}" alt="${translator}" class="ale-credit-avatar"></a>`
+      ? `<a href="${translatorUrl}" target="_blank" rel="noopener noreferrer"><img src="${translatorAvatar}" alt="${translator}" class="ale-credit-avatar ale-credit-avatar-inline"></a>`
       : '';
 
     const translatorHtml = translator && translatorUrl
-      ? `<span class="ale-credit-sep">•</span>${translatorAvatarHtml}<span>${trLabel} <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">${translator}</a></span>`
+      ? `<span class="ale-credit-sep">•</span><span class="ale-credit-inline">${translatorAvatarHtml}<span>${trLabel} <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">${translator}</a></span></span>`
       : '';
 
     const creditHtml = `
@@ -98,7 +98,12 @@ module.exports = {
   display: flex;
   gap: 0.45rem;
   flex-wrap: wrap;
+  align-items: center;
+  line-height: 1.25;
 }
+.ale-page-credit-text > span { display: inline-flex; align-items: center; }
+.ale-credit-inline { display: inline-flex; align-items: center; gap: 0.4rem; }
+.ale-credit-avatar-inline { width: 22px; height: 22px; }
 .ale-credit-sep { opacity: 0.6; }
 
 .ale-sticky-pager {
