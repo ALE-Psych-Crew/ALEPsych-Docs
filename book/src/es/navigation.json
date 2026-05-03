@@ -1,80 +1,20 @@
 [
-  { "title": "Inicio", "path": "/docs" },
-  { "title": "Tabla de contenidos", "path": "/docs/table-of-contents" },
+  {
+    "title": "Inicio",
+    "path": "/docs"
+  },
+  {
+    "title": "Tabla de contenidos",
+    "path": "/docs/table-of-contents"
+  },
   {
     "title": "Empezando",
     "collapsible": true,
     "children": [
-      { "title": "Crea tu primer mod", "path": "/docs/beginner/tutorials/create-your-first-mod" },
-      { "title": "Elige un mod", "path": "/docs/beginner/tutorials/activate-a-mod-from-the-mods-menu" },
-      { "title": "Forzar un mod como seleccionado automaticamente", "path": "/docs/beginner/how-to/force-one-mod-as-auto-selected" }
+      {
+        "title": "Crea tu primer mod",
+        "path": "/docs/beginner/tutorials/create-your-first-mod"
+      }
     ]
-  },
-  {
-    "title": "Canciones y semanas",
-    "collapsible": true,
-    "children": [
-      { "title": "Agrega tu primera cancion", "path": "/docs/easy/tutorials/add-your-first-song" },
-      { "title": "Agrega una nueva semana al modo historia", "path": "/docs/easy/tutorials/add-a-new-week-to-story-mode" },
-      { "title": "Agrega multiples dificultades a una cancion", "path": "/docs/easy/how-to/add-multiple-difficulties-to-a-song" },
-      { "title": "Sigue las reglas de carpetas de canciones y rutas de charts", "path": "/docs/easy/how-to/follow-song-folder-and-chart-path-rules" },
-      { "title": "Como se conectan las canciones y las semanas", "path": "/docs/easy/explanation/how-songs-and-weeks-connect" }
-    ]
-  },
-  {
-    "title": "Personajes, escenarios y HUD",
-    "collapsible": true,
-    "children": [
-      { "title": "Agregar un personaje personalizado", "path": "/docs/intermediate/tutorials/add-a-custom-character" },
-      { "title": "Agregar un escenario personalizado", "path": "/docs/intermediate/tutorials/add-a-custom-stage" },
-      { "title": "Reemplaza HUD, notes y strums con recursos del mod", "path": "/docs/intermediate/tutorials/replace-hud-notes-and-strums-with-mod-assets" },
-      { "title": "Construye JSON de personaje con animaciones funcionales", "path": "/docs/intermediate/how-to/build-character-json-with-working-animations" },
-      { "title": "Construye JSON de escenario con capas de sprites", "path": "/docs/intermediate/how-to/build-stage-json-with-sprite-layers" },
-      { "title": "Crea perfiles de HUD personalizados", "path": "/docs/intermediate/how-to/create-custom-hud-profiles" },
-      { "title": "Agrega iconos personalizados y color de barra de salud", "path": "/docs/intermediate/how-to/add-custom-icons-and-healthbar-color-behavior" },
-      { "title": "Como funcionan los datos de animacion de personajes", "path": "/docs/intermediate/explanation/how-character-animation-data-works" },
-      { "title": "Como funcionan las capas del escenario", "path": "/docs/intermediate/explanation/how-stage-layering-works" }
-    ]
-  },
-  {
-    "title": "Configuracion y esquemas",
-    "collapsible": true,
-    "children": [
-      { "title": "Sobrescribe recursos base de forma segura", "path": "/docs/intermediate/how-to/override-base-assets-safely" },
-      { "title": "Personaliza StrumLine para nuevos layouts de teclas", "path": "/docs/intermediate/how-to/customize-strumline-config-for-new-key-layouts" },
-      { "title": "Usa el esquema JSON de personajes", "path": "/docs/intermediate/how-to/use-the-character-json-schema" },
-      { "title": "Usa el esquema JSON de escenario", "path": "/docs/intermediate/how-to/use-the-stage-json-schema" },
-      { "title": "Usa el esquema JSON de StrumLine", "path": "/docs/intermediate/how-to/use-the-strumline-json-schema" },
-      { "title": "Usa el esquema JSON de Strums", "path": "/docs/intermediate/how-to/use-the-strums-json-schema" },
-      { "title": "Usa el esquema JSON de Notes", "path": "/docs/intermediate/how-to/use-the-notes-json-schema" },
-      { "title": "Usa el esquema JSON de Splashes", "path": "/docs/intermediate/how-to/use-the-splashes-json-schema" },
-      { "title": "Usa el esquema JSON de HUD", "path": "/docs/intermediate/how-to/use-the-hud-json-schema" },
-      { "title": "Como funcionan las sobreescrituras de recursos", "path": "/docs/intermediate/explanation/how-asset-overrides-work" }
-    ]
-  },
-  {
-    "title": "Avanzado",
-    "collapsible": true,
-    "children": [
-      { "title": "Deshabilita el cambio de mod para builds de distribucion", "path": "/docs/advanced/how-to/disable-mod-switching-for-distribution-builds" },
-      { "title": "Soporta diferencias de recursos entre desktop y mobile", "path": "/docs/advanced/how-to/support-desktop-and-mobile-asset-differences" },
-      { "title": "Comportamiento de builds de distribucion", "path": "/docs/advanced/explanation/distribution-build-behavior" },
-      { "title": "Recursos especificos por plataforma", "path": "/docs/advanced/explanation/platform-specific-assets" }
-    ]
-  },
-  {
-    "title": "Solucion de problemas",
-    "collapsible": true,
-    "children": [
-      { "title": "Mod no detectado", "path": "/docs/troubleshooting/mod-not-detected" },
-      { "title": "La cancion no carga", "path": "/docs/troubleshooting/song-does-not-load" },
-      { "title": "Chart no encontrado", "path": "/docs/troubleshooting/chart-not-found" },
-      { "title": "Voices o Inst no se reproducen", "path": "/docs/troubleshooting/voices-or-inst-not-playing" },
-      { "title": "La animacion del personaje no funciona", "path": "/docs/troubleshooting/character-animation-not-working" },
-      { "title": "Faltan recursos del escenario", "path": "/docs/troubleshooting/stage-assets-missing" },
-      { "title": "Los recursos del HUD no cambian", "path": "/docs/troubleshooting/hud-assets-not-changing" },
-      { "title": "Errores de JSON", "path": "/docs/troubleshooting/json-errors" }
-    ]
-  },
-  { "title": "Comunidad", "path": "/docs/community" }
+  }
 ]
