@@ -18,6 +18,10 @@
       {
         "title": "Estructura del Mod",
         "path": "/docs/beginner/mod-structure"
+      },
+      {
+        "title": "Data.json",
+        "path": "/docs/beginner/data-json"
       }
     ]
   }
