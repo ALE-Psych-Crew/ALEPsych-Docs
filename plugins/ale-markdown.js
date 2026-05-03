@@ -12,7 +12,9 @@ export default {
 			'thx',
 			'trollface',
 			'blobCookie',
-			'gentleBlob'
+			'gentleBlob',
+			'qdijiste',
+			'queHasDicho'
 		];
 
 		const defaultRender = md.renderer.rules.text || function (tokens, idx) {
