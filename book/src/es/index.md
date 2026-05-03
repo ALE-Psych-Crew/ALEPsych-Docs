@@ -4,7 +4,7 @@
 
 ### *"Si Psych es tan bueno, ¿por qué no existe Psych 2?"*
 
-En esta página podrás encontrar almenos la información necesaria para empezar con tu *mod* en **ALE Psych** <img src='https://github.com/ALE-Psych-Crew/ALE-Psych-Docs/raw/assets/emojis/alejito.png' width=20> <br/> <sub>Diríjase [Aquí](./docs/)</sub>
+En esta página podrás encontrar almenos la información necesaria para empezar con tu *mod* en **ALE Psych** <img src='https://raw.githubusercontent.com/ALE-Psych-Crew/ALEPsych-Docs/main/assets/emojis/alejito.png' align=center width=20> <br/> <sub>Diríjase [Aquí](./docs/)</sub>
 
 ---
 
