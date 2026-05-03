@@ -1,48 +1,49 @@
-## Estructura del Mod
+# Estructura del Mod
 
-Aunque el *Engine* está basado en *Psych*, la estructura es completamente distinta, con el objetivo de disminuir el tamaño y el desorden de `MOD/`
+Aunque ALE Psych está inspirado en Psych Engine, su estructura está pensada para ser más limpia y flexible.
 
-::: collapsible open `MOD/`
-    ::: collapsible `data/`
-        - `characters/`
-        - `huds/`
-        - `notes/`
-        - `splashes/`
-        - `stages/`
-        - `strumLines/`
-        - `strums/`
-        - `weeks/`
-    :::
-    
-    ::: collapsible `scripts/`
-        - `classes/`
-        - `states/`
-        - `substate/`
-    :::
-    
-    ::: collapsible `songs/`
-        ::: collapsible `SONG/`
-            - `charts/`
-            - `audios/`
-            - `scripts/`
-        :::
-    :::
+## Estructura recomendada
 
-    - `fonts/`
-    - `images/`
-    - `music/`
+```text
+MOD/
+  data/
+    characters/
+    huds/
+    notes/
+    splashes/
+    stages/
+    strumLines/
+    strums/
+    weeks/
+  scripts/
+    classes/
+    states/
+    substate/
+  songs/
+    SONG/
+      charts/
+      audios/
+      scripts/
+  fonts/
+  images/
+  music/
+  shaders/
+  sounds/
+```
 
-    - `shaders/`
-    - `sounds/`
-:::
+## Qué carpeta usar para cada cosa
 
-::: callout tip Pro Tip :gentleBlob:
-Si las carpetas por alguna razón no funcionan
--# Ya sea por un error al escribir la documentación o porque la página está desactualizada
+- `data/`: configuración en JSON (personajes, semanas, strumLines, stages, etc.).
+- `songs/`: contenido por canción (`charts`, audio y scripts por canción).
+- `scripts/`: scripts globales o reutilizables.
+- `images`, `sounds`, `music`, `fonts`, `shaders`: recursos multimedia.
 
-Puedes tomar como base la carpeta `ROOT/assets`
-:::
+## Si algo no funciona
+
+1. Revisa nombres de carpeta (mayúsculas/minúsculas y escritura exacta).
+2. Comprueba que la ruta en tu mod coincide con la del recurso base.
+3. Si tienes dudas, usa `ROOT/assets` como referencia de estructura.
 
 ::: callout warning Advertencia :queHasDicho:
-Parte de la información mostrada está propensa a cambios
+Parte de esta estructura puede evolucionar con futuras versiones del motor.
 :::

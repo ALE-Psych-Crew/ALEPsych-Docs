@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Notes",
+    "path": "/docs"
+  },
+  {
+    "title": "Getting Started",
+    "collapsible": true,
+    "children": [
+      {
+        "title": "Mod Folder",
+        "path": "/docs/beginner/mod-folder"
+      },
+      {
+        "title": "Mod Structure",
+        "path": "/docs/beginner/mod-structure"
+      }
+    ]
+  }
+]

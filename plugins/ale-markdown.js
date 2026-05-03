@@ -1,41 +1,45 @@
-export default {
-	markdownSetup(md) {
-		const emojis = [
-			'alejito',
-			'aySi',
-			'calvinEnojao',
-			'calvinPlan',
-			'jonk',
-			'meVoid',
-			'ommmHD',
-			'semmi',
-			'thx',
-			'trollface',
-			'blobCookie',
-			'gentleBlob',
-			'qdijiste',
-			'queHasDicho'
-		];
+module.exports = {
+  plugin: {
+    name: 'ale-markdown',
+    version: '1.0.0',
+    capabilities: ['markdown']
+  },
+  markdownSetup(md) {
+    const emojis = [
+      'alejito',
+      'aySi',
+      'calvinEnojao',
+      'calvinPlan',
+      'jonk',
+      'meVoid',
+      'ommmHD',
+      'semmi',
+      'thx',
+      'trollface',
+      'blobCookie',
+      'gentleBlob',
+      'qdijiste',
+      'queHasDicho'
+    ];
 
-		const defaultRender = md.renderer.rules.text || function (tokens, idx) {
-			return tokens[idx].content;
-		};
+    const defaultRender = md.renderer.rules.text || function (tokens, idx) {
+      return tokens[idx].content;
+    };
 
-		md.renderer.rules.text = function (tokens, idx, options, env, self) {
-			let content = defaultRender(tokens, idx, options, env, self);
+    md.renderer.rules.text = function (tokens, idx, options, env, self) {
+      let content = defaultRender(tokens, idx, options, env, self);
 
-			// Emojis
-			content = content.replace(/:([a-zA-Z0-9_]+):/g, (match, name) => {
-				if (emojis.includes(name))
-					return `<img src="https://raw.githubusercontent.com/ALE-Psych-Crew/ALEPsych-Docs/main/assets/emojis/${name}.png" class="emoji" alt="${name}">`;
+      content = content.replace(/:([a-zA-Z0-9_]+):/g, (match, name) => {
+        if (emojis.includes(name)) {
+          return `<img src="/assets/emojis/${name}.png" class="emoji" alt="${name}">`;
+        }
 
-				return match;
-			});
+        return match;
+      });
 
-			// Discord's -#
-			content = content.replace(/-#/g, '<sub>');
+      content = content.replace(/(^|\n)-#\s*([^\n]+)/g, '$1<sub>$2</sub>');
 
-			return content;
-		};
-	}
+      return content;
+    };
+  }
 };

@@ -4,20 +4,15 @@ This repository contains DocMD documentation for ALE-Psych modding.
 
 ## Main docs
 
+- `book/src/es/docs/index.md`
 - `book/src/en/docs/index.md`
-- `book/src/en/docs/learning-path.md`
 
 ## Structure
 
-The docs follow Diataxis grouped by difficulty:
+The docs follow a beginner-focused structure in both locales:
 
+- `book/src/es/docs/beginner`
 - `book/src/en/docs/beginner`
-- `book/src/en/docs/easy`
-- `book/src/en/docs/intermediate`
-- `book/src/en/docs/advanced`
-- `book/src/en/docs/reference`
-- `book/src/en/docs/troubleshooting`
-- `book/src/en/docs/audit`
 
 ## Local preview
 
