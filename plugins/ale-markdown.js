@@ -1,7 +1,7 @@
 module.exports = {
   plugin: {
     name: 'ale-markdown',
-    version: '1.1.0',
+    version: '1.1.1',
     capabilities: ['markdown', 'build', 'body']
   },
 
@@ -35,7 +35,7 @@ module.exports = {
 
   onAfterParse(html, frontmatter = {}) {
     const author = frontmatter.author;
-    const authorUrl = frontmatter.author_url;
+    const authorUrl = frontmatter.author_url || (author ? `https://github.com/${author}` : null);
     const authorAvatar = frontmatter.author_avatar || (author ? `https://github.com/${author}.png?size=64` : null);
     const lang = frontmatter.lang || 'en';
 
@@ -44,7 +44,7 @@ module.exports = {
     }
 
     const translator = frontmatter.translator;
-    const translatorUrl = frontmatter.translator_url;
+    const translatorUrl = frontmatter.translator_url || (translator ? `https://github.com/${translator}` : null);
     const translatorAvatar = frontmatter.translator_avatar || (translator ? `https://github.com/${translator}.png?size=64` : null);
 
     const byLabel = lang === 'es' ? 'Escrito por' : 'Written by';
