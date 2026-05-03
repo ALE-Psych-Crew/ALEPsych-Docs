@@ -2,7 +2,7 @@
 
 ![ALE Psych Logo](https://github.com/ALE-Psych-Crew/ALE-Psych/raw/main/art/githubLogo.png)
 
-### *"Si Psych es tan bueno, ¿por qué no existe Psych 2?"*
+## *"Si Psych es tan bueno, ¿por qué no existe Psych 2?"*
 
 En esta página podrás encontrar almenos la información necesaria para empezar con tu *mod* en **ALE Psych** <br/> <sub>Diríjase [Aquí](./docs/)</sub>
 

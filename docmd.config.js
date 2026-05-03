@@ -11,6 +11,9 @@ module.exports = defineConfig({
     dark: 'assets/ale-psych-logo-dark.png',
     alt: 'ALE Psych',
   },
+  plugins: {
+    './plugins/emojis.js': {}
+  },
   theme: {
     name: 'default',
     appearance: 'system',

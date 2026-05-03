@@ -61,3 +61,12 @@ textarea:focus-visible,
 .doc-content h2 {
   margin-top: 1.75rem;
 }
+
+.emoji {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  line-height: 1;
+  vertical-align: -0.125em;
+  margin: 0 0.05em;
+}
