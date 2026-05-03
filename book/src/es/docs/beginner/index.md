@@ -3,7 +3,7 @@
 ## Tutoriales
 
 - [Create Your First Mod](./tutorials/create-your-first-mod)
-- [Choose a Mod](./tutorials/activate-a-mod-from-the-mods-menu)
+- [Elige un mod](./tutorials/activate-a-mod-from-the-mods-menu)
 
 ## Cómo hacerlo
 
