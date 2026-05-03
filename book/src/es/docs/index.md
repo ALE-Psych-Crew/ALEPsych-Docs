@@ -1,17 +1,10 @@
 ---
 author: AlejoGDOfficial
-author_url: https://github.com/AlejoGDOfficial
-author_avatar: https://github.com/AlejoGDOfficial.png?size=64
 lang: es
 ---
 
 # Aclaraciones
 
-::: callout info Créditos
-[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
-
-Escrito por **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
-:::
 Antes de seguir, unas cositas rápidas para que no explote nada :calvinEnojao:
 
 1. A la hora de leer rutas, ten en cuenta esto:

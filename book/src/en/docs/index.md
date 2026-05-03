@@ -1,21 +1,11 @@
 ---
 author: AlejoGDOfficial
-author_url: https://github.com/AlejoGDOfficial
-author_avatar: https://github.com/AlejoGDOfficial.png?size=64
 lang: en
 translator: ImMalloy
-translator_url: https://github.com/ImMalloy
 ---
 
 # Notes
 
-::: callout info Credits
-[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
-
-
-
-Translated by **[ImMalloy](https://github.com/ImMalloy)**
-:::
 These guides are written to help you start fast and avoid common mistakes :calvinEnojao:
 
 ## How paths are used in this documentation
