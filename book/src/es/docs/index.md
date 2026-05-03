@@ -1,6 +1,6 @@
 # Aclaraciones
 
-Antes de continuar, haré algunas especificaciones:
+Antes de continuar, haré algunas especificaciones :calvinEnojao:
 
 1. A la hora de específicar rutas se deben tener en cuenta un par de cosas
     - `ROOT` hace referencia a la carpeta raíz del *Engine*, aquella en la que se encuentra el ejecutable del mismo

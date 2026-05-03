@@ -12,7 +12,7 @@ module.exports = defineConfig({
     alt: 'ALE Psych',
   },
   plugins: {
-    './plugins/emojis.js': {}
+    './plugins/ale-markdown': {}
   },
   theme: {
     name: 'default',
