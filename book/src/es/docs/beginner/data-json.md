@@ -1,3 +1,10 @@
+---
+author: ImMalloy
+author_url: https://github.com/ImMalloy
+author_avatar: https://github.com/ImMalloy.png?size=64
+lang: es
+---
+
 # Data.json
 
 ::: callout info Créditos

@@ -1,3 +1,10 @@
+---
+author: AlejoGDOfficial
+author_url: https://github.com/AlejoGDOfficial
+author_avatar: https://github.com/AlejoGDOfficial.png?size=64
+lang: es
+---
+
 # Aclaraciones
 
 ::: callout info Créditos

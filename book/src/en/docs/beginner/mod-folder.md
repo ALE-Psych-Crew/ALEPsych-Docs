@@ -1,9 +1,20 @@
+---
+author: AlejoGDOfficial
+author_url: https://github.com/AlejoGDOfficial
+author_avatar: https://github.com/AlejoGDOfficial.png?size=64
+lang: en
+translator: ImMalloy
+translator_url: https://github.com/ImMalloy
+---
+
 # Mod Folder
 
 ::: callout info Credits
 [![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
 
-Written by **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
+
+
+Translated by **[ImMalloy](https://github.com/ImMalloy)**
 :::
 This is the foundation of your entire project :blobCookie:
 
