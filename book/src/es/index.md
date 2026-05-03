@@ -2,8 +2,11 @@
 
 ![ALE Psych Logo](https://github.com/ALE-Psych-Crew/ALE-Psych/raw/main/art/githubLogo.png)
 
-Una guía clara y fácil para principiantes que quieren crear mods en **ALE Psych**.
+## *"Si Psych es tan bueno, ¿por qué no existe Psych 2?"*
 
-:alejito: :gentleBlob: :thx:
+Acá tienes lo necesario para empezar tu *mod* en **ALE Psych** sin volverte loco :alejito:
+-# Diríjase [Aquí](./docs/)
 
-Empieza aquí: [Documentación](./docs/)
+---
+
+Igual, si te trabas fuerte, te recomiendo dos rutas: **leer** el [Código Fuente](https://github.com/ALE-Psych-Crew/ALE-Psych) o **pedir ayuda** en el [Servidor de Discord](https://discord.gg/NP4U9CUrsH) :aySi:

@@ -1,25 +1,22 @@
 # Aclaraciones
 
-Estas guías están hechas para que puedas empezar rápido y evitar errores comunes :calvinEnojao:
+Antes de seguir, unas cositas rápidas para que no explote nada :calvinEnojao:
 
-## Cómo leer rutas en esta documentación
+1. A la hora de leer rutas, ten en cuenta esto:
+   - Si el *snippet* termina en `/`, estamos hablando de una carpeta.
+   - `ROOT/` = carpeta raíz del *Engine* (donde está el ejecutable).
+   - `MOD/` = `ROOT/mods/NOMBRE_DEL_MOD`.
+   - `SONG/` = carpeta de una canción dentro de `MOD/songs/`.
 
-- Si una ruta termina en `/`, es una carpeta.
-- `ROOT/` es la carpeta principal del juego (donde está `ALEPsych.exe`).
-- `MOD/` es tu carpeta de mod: `ROOT/mods/NOMBRE_DEL_MOD`.
-- `SONG/` es la carpeta de una canción específica dentro de `MOD/songs/`.
+2. Esta "edición" del *Engine* empezó a mediados de enero, así que sí, todavía hay cosas sujetas a cambios.
 
-## Qué motor/editor usar
+3. Como el *Engine* **aún** no trae editores propios, se recomienda usar los de [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) para crear algunos `.json`.
 
-- ALE Psych sigue en desarrollo y algunas rutas o formatos pueden cambiar.
-- Actualmente se recomienda usar editores de Psych Engine para crear algunos `.json`.
-- Si algo no coincide con un tutorial viejo, toma como referencia esta documentación y el contenido real de `ROOT/assets`.
+## Orden real de carga (importantísimo)
 
-## Orden real de carga de archivos (importante)
-
-Cuando seleccionas un mod, el motor busca primero en tu mod y luego en `assets` del juego base.
+Cuando seleccionas un mod, el motor primero busca en tu mod y luego en `assets` base.
 
 1. `ROOT/mods/NOMBRE_DEL_MOD/...`
 2. `ROOT/assets/...`
 
-Esto significa que puedes sobrescribir contenido del juego base copiando la misma ruta dentro de tu mod.
+Esto te deja sobrescribir contenido base replicando la misma ruta dentro de tu mod.

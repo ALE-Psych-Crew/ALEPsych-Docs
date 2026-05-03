@@ -1,6 +1,6 @@
 # Estructura del Mod
 
-Aunque ALE Psych está inspirado en Psych Engine, su estructura está pensada para ser más limpia y flexible.
+Aunque ALE Psych está inspirado en *Psych*, la estructura es distinta para mantener `MOD/` más ordenado y menos caótico.
 
 ## Estructura recomendada
 
@@ -31,19 +31,20 @@ MOD/
   sounds/
 ```
 
-## Qué carpeta usar para cada cosa
+## Para qué sirve cada parte
 
-- `data/`: configuración en JSON (personajes, semanas, strumLines, stages, etc.).
-- `songs/`: contenido por canción (`charts`, audio y scripts por canción).
+- `data/`: JSON de personajes, weeks, strumLines, stages, etc.
+- `songs/`: contenido por canción (`charts`, audio y scripts).
 - `scripts/`: scripts globales o reutilizables.
 - `images`, `sounds`, `music`, `fonts`, `shaders`: recursos multimedia.
 
-## Si algo no funciona
-
-1. Revisa nombres de carpeta (mayúsculas/minúsculas y escritura exacta).
-2. Comprueba que la ruta en tu mod coincide con la del recurso base.
-3. Si tienes dudas, usa `ROOT/assets` como referencia de estructura.
+::: callout tip Pro Tip :gentleBlob:
+Si algo no carga, respira y revisa:
+-# Nombre exacto de carpeta/archivo
+-# Ruta correcta en tu mod
+-# Referencia base en `ROOT/assets`
+:::
 
 ::: callout warning Advertencia :queHasDicho:
-Parte de esta estructura puede evolucionar con futuras versiones del motor.
+Parte de esta estructura puede cambiar con nuevas versiones del motor.
 :::
