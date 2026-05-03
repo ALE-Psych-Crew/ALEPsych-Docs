@@ -1,3 +1,3 @@
-#Documentos ALE-Psych
+# Documentación de ALE Psych
 
-Vaya a [ALE-Psych Modding Documentation](./docs).
+Diríjase a la [Documentación para Modding](./docs)
