@@ -27,7 +27,7 @@ export default {
 			// Emojis
 			content = content.replace(/:([a-zA-Z0-9_]+):/g, (match, name) => {
 				if (emojis.includes(name))
-					return `<img src="/assets/emojis/${name}.png" class="emoji" alt="${name}">`;
+					return `<img src="https://raw.githubusercontent.com/ALE-Psych-Crew/ALEPsych-Docs/main/assets/emojis/${name}.png" class="emoji" alt="${name}">`;
 
 				return match;
 			});
