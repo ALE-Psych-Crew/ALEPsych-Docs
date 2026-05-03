@@ -1,6 +1,6 @@
 # Reemplace HUD, notas y rasgueos con recursos mod
 
-::: advertencia "Sin terminar (WIP)"
+::: callout warning "Sin terminar (WIP)"
 Todavía se está trabajando en esta página y puede cambiar.
 :::
 
@@ -25,7 +25,7 @@ mods/MyMod/
 
 ## Pasos
 
-::: pasos
+::: steps
 1. **Copie primero los archivos JSON base**
    Empiece por trabajar con los valores predeterminados en los activos base.
 2. **Crea tus propias identificaciones**
@@ -40,7 +40,7 @@ mods/MyMod/
    Consulta la cuenta regresiva, el combo, las flechas, las notas y las salpicaduras.
 :::
 
-::: advertencia de llamada
+::: callout warning
 No elimine las claves requeridas de los archivos JSON del juego a menos que haya verificado el comportamiento alternativo en tiempo de ejecución.
 :::
 

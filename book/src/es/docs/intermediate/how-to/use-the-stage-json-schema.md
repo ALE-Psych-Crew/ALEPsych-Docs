@@ -1,12 +1,12 @@
 # Usar el esquema JSON de Stage
 
 ::: callout warning "Incompleto (WIP)"
-Esta página todavía se está elaborando y puede cambiar.
+Esta pï¿½gina todavï¿½a se estï¿½ elaborando y puede cambiar.
 :::
 
 ## Objetivo
 
-Crear un JSON de stage válido, incluyendo configuración opcional de sprites.
+Crear un JSON de stage vï¿½lido, incluyendo configuraciï¿½n opcional de sprites.
 
 ## Campos centrales requeridos
 

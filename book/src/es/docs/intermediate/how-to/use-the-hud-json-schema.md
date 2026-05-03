@@ -1,7 +1,7 @@
 # Usar el esquema JSON de HUD
 
 ::: callout warning "Incompleto (WIP)"
-Esta página todavía se está elaborando y puede cambiar.
+Esta pï¿½gina todavï¿½a se estï¿½ elaborando y puede cambiar.
 :::
 
 ## Objetivo

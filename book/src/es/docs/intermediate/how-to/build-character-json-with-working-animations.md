@@ -1,7 +1,7 @@
 # Construir JSON de personaje con animaciones funcionales
 
 ::: callout warning "Incompleto (WIP)"
-Esta página todavía se está elaborando y puede cambiar.
+Esta pï¿½gina todavï¿½a se estï¿½ elaborando y puede cambiar.
 :::
 
 ## Objetivo
@@ -11,8 +11,8 @@ Crear un JSON de personaje que se anime correctamente durante la jugabilidad.
 ## Pasos
 
 1. Comienza desde un JSON de personaje conocido que funcione.
-2. Configura `images`, `type` y las entradas de animación.
-3. Asegúrate de que existan los nombres de animación relacionados con notas.
+2. Configura `images`, `type` y las entradas de animaciï¿½n.
+3. Asegï¿½rate de que existan los nombres de animaciï¿½n relacionados con notas.
 4. Configura `icon`, `barColor`, offsets.
 5. Prueba animaciones de cantar, fallar, idle y especiales opcionales.
 

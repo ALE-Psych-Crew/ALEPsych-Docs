@@ -1,13 +1,13 @@
 # Usar el esquema JSON de Splashes
 
 ::: callout warning "Incompleto (WIP)"
-Esta página todavía se está elaborando y puede cambiar.
+Esta pï¿½gina todavï¿½a se estï¿½ elaborando y puede cambiar.
 :::
 
 ## Objetivo
 
 Definir animaciones de splash para los efectos de acierto de nota.
 
-## Regla práctica
+## Regla prï¿½ctica
 
-Parte de `assets/data/splashes/default.json` y asegura que existan los nombres referenciados por la configuración de strumline.
+Parte de `assets/data/splashes/default.json` y asegura que existan los nombres referenciados por la configuraciï¿½n de strumline.

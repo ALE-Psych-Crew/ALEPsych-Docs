@@ -21,9 +21,9 @@ Puede comenzar con cualquiera de los ejemplos siguientes.
 
 ## `data.json` ejemplos
 
-::: pestañas
+::: tabs
 
-== pestaña "Iniciador mínimo"
+== tab "Iniciador mínimo"
 ```json
 {
   "title": "FNF: My Mod",
@@ -35,7 +35,7 @@ Puede comenzar con cualquiera de los ejemplos siguientes.
 }
 ```
 
-== pestaña "Flujo de trabajo de inicio + desarrollo"
+== tab "Flujo de trabajo de inicio + desarrollo"
 ```json
 {
   "title": "FNF: My Mod",
@@ -51,7 +51,7 @@ Puede comenzar con cualquiera de los ejemplos siguientes.
 }
 ```
 
-== pestaña "Ejemplo completo"
+== tab "Ejemplo completo"
 ```json
 {
   "developerMode": true,
@@ -117,7 +117,7 @@ Puede comenzar con cualquiera de los ejemplos siguientes.
 | `discordButtons` | `Array<{label,url}>` | Botones que se muestran en Discord Rich Presence. |
 | `modID` | `Null<String>` | Espacio de nombres de datos guardados personalizado para que este mod pueda mantener guardados separados. |
 
-::: advertencia de texto "Nota de precedencia importante"
+::: callout warning "Nota de precedencia importante"
 `data.json` se carga mediante un bucle dedicado en `CoolVars.loadMetadata()`. Su comportamiento puede diferir de las expectativas generales de anulación de activos si existen tanto mod como base `data/data.json`.
 :::
 

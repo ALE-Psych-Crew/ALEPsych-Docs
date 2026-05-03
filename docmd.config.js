@@ -16,6 +16,7 @@ module.exports = defineConfig({
     appearance: 'system',
     customCss: ['assets/docmd-custom.css'],
   },
+  customJs: ['assets/favicons.js'],
   layout: {
     spa: false,
     menubar: {

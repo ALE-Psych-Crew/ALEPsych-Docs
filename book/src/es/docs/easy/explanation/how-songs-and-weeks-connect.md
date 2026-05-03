@@ -1,6 +1,6 @@
 # Cómo se conectan las canciones y las semanas
 
-::: advertencia "Sin terminar (WIP)"
+::: callout warning "Sin terminar (WIP)"
 Todavía se está trabajando en esta página y puede cambiar.
 :::
 

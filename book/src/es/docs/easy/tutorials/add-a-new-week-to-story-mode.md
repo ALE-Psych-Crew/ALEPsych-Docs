@@ -1,6 +1,6 @@
 # Agregar una nueva semana al modo Historia
 
-::: advertencia "Sin terminar (WIP)"
+::: callout warning "Sin terminar (WIP)"
 Todavía se está trabajando en esta página y puede cambiar.
 :::
 
@@ -23,7 +23,7 @@ mods/MyMod/
 
 ## Pasos
 
-::: pasos
+::: steps
 1. **Crear archivo semanal**
    Agregue `mods/MyMod/data/weeks/week-my-mod.json`.
 2. **Definir lista de canciones**

@@ -1,6 +1,6 @@
 # Fácil
 
-::: advertencia "Sin terminar (WIP)"
+::: callout warning "Sin terminar (WIP)"
 Todavía se está trabajando en esta página y puede cambiar.
 :::
 

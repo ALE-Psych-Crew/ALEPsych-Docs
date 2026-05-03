@@ -11,7 +11,7 @@ mods/MyMod/
 
 ## Configuración
 
-::: pasos
+::: steps
 1. **Establece el nombre del mod**
    En `mods/current_mod.txt`, escribe el nombre de tu carpeta mod en la línea 1:
    ```text

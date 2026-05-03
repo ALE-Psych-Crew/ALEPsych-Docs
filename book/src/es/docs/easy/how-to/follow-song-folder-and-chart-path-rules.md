@@ -1,6 +1,6 @@
 # Siga las reglas de ruta de gráficos y carpetas de canciones
 
-::: advertencia "Sin terminar (WIP)"
+::: callout warning "Sin terminar (WIP)"
 Todavía se está trabajando en esta página y puede cambiar.
 :::
 

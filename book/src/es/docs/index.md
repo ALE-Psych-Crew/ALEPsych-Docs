@@ -8,7 +8,7 @@ Esta es la documentación oficial para el **motor ALE Psych**.
 
 ALE Psych es un motor Friday Night Funkin' inspirado en Psych Engine, centrado en codificación suave, flujos de trabajo JSON y personalización basada en scripts.
 
-::: información destacada
+::: callout info
 Este motor es un trabajo en progreso, pero ya se utiliza para crear modificaciones completas.
 :::
 

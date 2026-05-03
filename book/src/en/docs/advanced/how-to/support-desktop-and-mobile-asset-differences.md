@@ -19,6 +19,6 @@ Handle platform-specific behavior without breaking mod content.
 - Test mobile and desktop separately before release.
 - Avoid assuming desktop-only features in scripts/UI.
 
-:::info
+::: callout info
 Detailed mobile asset-branching conventions are not fully centralized in one schema; manual runtime testing is required.
 :::

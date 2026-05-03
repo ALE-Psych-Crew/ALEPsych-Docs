@@ -1,13 +1,13 @@
 # Usar el esquema JSON de Notes
 
 ::: callout warning "Incompleto (WIP)"
-Esta página todavía se está elaborando y puede cambiar.
+Esta pï¿½gina todavï¿½a se estï¿½ elaborando y puede cambiar.
 :::
 
 ## Objetivo
 
-Definir animaciones de sprites de notas usadas por la configuración de strumline.
+Definir animaciones de sprites de notas usadas por la configuraciï¿½n de strumline.
 
-## Regla práctica
+## Regla prï¿½ctica
 
-Parte de `assets/data/notes/default.json` y mantén presentes los ids de animación requeridos.
+Parte de `assets/data/notes/default.json` y mantï¿½n presentes los ids de animaciï¿½n requeridos.

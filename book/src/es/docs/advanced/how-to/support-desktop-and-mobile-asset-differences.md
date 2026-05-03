@@ -1,6 +1,6 @@
 # Soporte para las diferencias entre activos móviles y de escritorio
 
-::: advertencia "Sin terminar (WIP)"
+::: callout warning "Sin terminar (WIP)"
 Todavía se está trabajando en esta página y puede cambiar.
 :::
 
@@ -19,6 +19,6 @@ Maneje el comportamiento específico de la plataforma sin alterar el contenido m
 - Pruebe dispositivos móviles y de escritorio por separado antes del lanzamiento.
 - Evite asumir funciones exclusivas de escritorio en scripts/UI.
 
-:::información
+::: callout info
 Las convenciones detalladas sobre ramificación de activos móviles no están completamente centralizadas en un esquema; Se requieren pruebas de tiempo de ejecución manuales.
 :::
