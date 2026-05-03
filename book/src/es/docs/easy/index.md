@@ -6,14 +6,14 @@ Todavía se está trabajando en esta página y puede cambiar.
 
 ## Tutoriales
 
-- [Add Your First Song](./tutorials/add-your-first-song)
-- [Add a New Week to Story Mode](./tutorials/add-a-new-week-to-story-mode)
+- [Agrega tu primera canción](./tutorials/add-your-first-song)
+- [Agrega una nueva semana al modo Historia](./tutorials/add-a-new-week-to-story-mode)
 
 ## Cómo hacerlo
 
-- [Add Multiple Difficulties to a Song](./how-to/add-multiple-difficulties-to-a-song)
-- [Follow Song Folder and Chart Path Rules](./how-to/follow-song-folder-and-chart-path-rules)
+- [Agrega múltiples dificultades a una canción](./how-to/add-multiple-difficulties-to-a-song)
+- [Sigue las reglas de carpetas de canciones y rutas de gráficos](./how-to/follow-song-folder-and-chart-path-rules)
 
 ## Explicación
 
-- [How Songs and Weeks Connect](./explanation/how-songs-and-weeks-connect)
+- [Cómo se conectan las canciones y las semanas](./explanation/how-songs-and-weeks-connect)

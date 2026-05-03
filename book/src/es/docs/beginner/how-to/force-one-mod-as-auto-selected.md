@@ -1,4 +1,4 @@
-# Force One Mod como seleccionado automáticamente
+# Forzar un mod como seleccionado automáticamente
 
 Utilízalo cuando quieras que el motor cargue siempre un mod.
 

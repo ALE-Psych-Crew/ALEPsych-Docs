@@ -1,12 +1,12 @@
 # Solución de problemas
 
-## páginas
+## Páginas
 
-- [Mod Not Detected](./mod-not-detected)
-- [Song Does Not Load](./song-does-not-load)
-- [Chart Not Found](./chart-not-found)
-- [Voices or Inst Not Playing](./voices-or-inst-not-playing)
-- [Character Animation Not Working](./character-animation-not-working)
-- [Stage Assets Missing](./stage-assets-missing)
-- [HUD Assets Not Changing](./hud-assets-not-changing)
-- [JSON Errors](./json-errors)
+- [Mod no detectado](./mod-not-detected)
+- [La canción no se carga](./song-does-not-load)
+- [Gráfico no encontrado](./chart-not-found)
+- [Las voces o el instrumental no se reproducen](./voices-or-inst-not-playing)
+- [La animación del personaje no funciona](./character-animation-not-working)
+- [Faltan recursos del escenario](./stage-assets-missing)
+- [Los recursos del HUD no cambian](./hud-assets-not-changing)
+- [Errores de JSON](./json-errors)

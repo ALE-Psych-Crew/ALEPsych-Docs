@@ -6,10 +6,10 @@ Todavía se está trabajando en esta página y puede cambiar.
 
 ## Cómo hacerlo
 
-- [Disable Mod Switching for Distribution Builds](./how-to/disable-mod-switching-for-distribution-builds)
-- [Support Desktop and Mobile Asset Differences](./how-to/support-desktop-and-mobile-asset-differences)
+- [Deshabilita el cambio de mod para compilaciones de distribución](./how-to/disable-mod-switching-for-distribution-builds)
+- [Admite diferencias de recursos entre escritorio y móvil](./how-to/support-desktop-and-mobile-asset-differences)
 
 ## Explicación
 
-- [Distribution Build Behavior](./explanation/distribution-build-behavior)
-- [Platform-Specific Assets](./explanation/platform-specific-assets)
+- [Comportamiento de compilación de distribución](./explanation/distribution-build-behavior)
+- [Recursos específicos de la plataforma](./explanation/platform-specific-assets)

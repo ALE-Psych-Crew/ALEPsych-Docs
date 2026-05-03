@@ -1,4 +1,4 @@
-# principiante
+# Principiante
 
 ## Tutoriales
 
@@ -7,4 +7,4 @@
 
 ## Cómo hacerlo
 
-- [Force One Mod as Auto-Selected](./how-to/force-one-mod-as-auto-selected)
+- [Forzar un mod como seleccionado automáticamente](./how-to/force-one-mod-as-auto-selected)

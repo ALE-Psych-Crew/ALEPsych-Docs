@@ -14,9 +14,9 @@ Este motor es un trabajo en progreso, pero ya se utiliza para crear modificacion
 
 ## Empieza aquí
 
-- Abre el [Table of Contents](./table-of-contents)
-- Ve a [Beginner](./beginner) si este es tu primer mod
-- Visita [Community](./community) para modificaciones y marcos.
+- Abre el [Tabla de contenidos](./table-of-contents)
+- Ve a [Principiante](./beginner) si este es tu primer mod
+- Visita [Comunidad](./community) para modificaciones y marcos.
 
 ## Qué cubre este sitio de documentos
 
