@@ -1,5 +1,10 @@
 # Documentación de ALE Psych
 
+::: callout info Créditos
+[![ImMalloy avatar](https://github.com/ImMalloy.png?size=72)](https://github.com/ImMalloy)
+
+Escrito por **[ImMalloy](https://github.com/ImMalloy)**
+:::
 ![ALE Psych Logo](https://github.com/ALE-Psych-Crew/ALE-Psych/raw/main/art/githubLogo.png)
 
 ## *"Si Psych es tan bueno, ¿por qué no existe Psych 2?"*

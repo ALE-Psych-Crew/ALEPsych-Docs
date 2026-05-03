@@ -1,5 +1,10 @@
 # Mod Folder
 
+::: callout info Credits
+[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
+
+Written by **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
+:::
 This is the foundation of your entire project :blobCookie:
 
 ## Create your mod

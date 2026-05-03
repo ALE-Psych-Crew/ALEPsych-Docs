@@ -1,5 +1,10 @@
 # Carpeta del Mod
 
+::: callout info Créditos
+[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
+
+Escrito por **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
+:::
 Creo que se explica sola, pero por si acaso :blobCookie:
 
 1. Abre `ROOT/mods/`

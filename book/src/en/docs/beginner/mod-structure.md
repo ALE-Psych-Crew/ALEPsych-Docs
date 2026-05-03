@@ -1,5 +1,10 @@
 # Mod Structure
 
+::: callout info Credits
+[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
+
+Written by **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
+:::
 Even though ALE Psych is inspired by Psych Engine, its structure is designed to be cleaner and more flexible.
 
 ## Recommended structure

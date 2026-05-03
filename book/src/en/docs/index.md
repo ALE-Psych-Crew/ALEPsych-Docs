@@ -1,5 +1,10 @@
 # Notes
 
+::: callout info Credits
+[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
+
+Written by **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
+:::
 These guides are written to help you start fast and avoid common mistakes :calvinEnojao:
 
 ## How paths are used in this documentation

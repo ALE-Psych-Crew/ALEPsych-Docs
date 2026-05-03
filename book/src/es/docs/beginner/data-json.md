@@ -1,5 +1,10 @@
 # Data.json
 
+::: callout info Créditos
+[![ImMalloy avatar](https://github.com/ImMalloy.png?size=72)](https://github.com/ImMalloy)
+
+Escrito por **[ImMalloy](https://github.com/ImMalloy)**
+:::
 `data.json` es básicamente el panel de control global del engine/mod: define estados base, ventana, debug, Discord RPC y comportamiento general :calvinPlan:
 -# Sí, este archivo manda bastante
 

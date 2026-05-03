@@ -1,5 +1,10 @@
 # Estructura del Mod
 
+::: callout info Créditos
+[![AlejoGDOfficial avatar](https://github.com/AlejoGDOfficial.png?size=72)](https://github.com/AlejoGDOfficial)
+
+Escrito por **[AlejoGDOfficial](https://github.com/AlejoGDOfficial)**
+:::
 Aunque ALE Psych está inspirado en *Psych*, la estructura es distinta para mantener `MOD/` más ordenado y menos caótico.
 
 ## Estructura recomendada
