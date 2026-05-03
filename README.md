@@ -1,15 +1,32 @@
-# ALE Psych Documentation
+# ALE Psych Docs
 
-![ALE Psych Logo](assets/ale-psych-logo-dark.png)
+This repository contains DocMD documentation for ALE-Psych modding.
 
-Official documentation site for **ALE Psych**, powered by docmd.
+## Main docs
 
-- Source content: `book/src`
-- Live site: https://ale-psych-crew.github.io/ALEPsych-Docs
+- `book/src/en/docs/index.md`
+- `book/src/en/docs/learning-path.md`
 
-## Quick Start
+## Structure
+
+The docs follow Diataxis grouped by difficulty:
+
+- `book/src/en/docs/beginner`
+- `book/src/en/docs/easy`
+- `book/src/en/docs/intermediate`
+- `book/src/en/docs/advanced`
+- `book/src/en/docs/reference`
+- `book/src/en/docs/troubleshooting`
+- `book/src/en/docs/audit`
+
+## Local preview
+
+Run:
+
 ```bash
-npm install
 npm run dev
-npm run build
 ```
+
+Or use:
+
+- `preview-docs.bat`
