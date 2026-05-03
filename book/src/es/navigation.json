@@ -4,16 +4,12 @@
     "path": "/docs"
   },
   {
-    "title": "Tabla de contenidos",
-    "path": "/docs/table-of-contents"
-  },
-  {
     "title": "Empezando",
     "collapsible": true,
     "children": [
       {
-        "title": "Crea tu primer mod",
-        "path": "/docs/beginner/create-your-first-mod"
+        "title": "Carpeta del Mod",
+        "path": "/docs/beginner/mod-folder"
       }
     ]
   }
