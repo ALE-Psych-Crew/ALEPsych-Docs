@@ -1,3 +1,8 @@
+---
+author: AlejoGDOfficial
+lang: es
+---
+
 ## Carpeta del Mod
 
 Creo que se explica solo :blobCookie:
@@ -7,5 +12,5 @@ Creo que se explica solo :blobCookie:
 
 ::: callout tip Pro Tip :gentleBlob:
 Puedes dirigirte al menú de selección de *mods* usando `Ctrl + Shift + M`
--# Esto siendo personalizable por medio del menú de opciones
+Esto es personalizable por medio del menú de opciones
 :::

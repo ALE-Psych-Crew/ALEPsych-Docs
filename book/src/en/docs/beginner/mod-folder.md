@@ -1,4 +1,10 @@
-﻿## Mod Folder
+---
+author: AlejoGDOfficial
+lang: en
+translator: ImMalloy
+---
+
+## Mod Folder
 
 I think this explains itself :blobCookie:
 

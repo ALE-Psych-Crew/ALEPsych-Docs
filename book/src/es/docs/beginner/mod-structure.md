@@ -1,3 +1,8 @@
+---
+author: AlejoGDOfficial
+lang: es
+---
+
 ## Estructura del Mod
 
 Aunque el *Engine* está basado en *Psych*, la estructura es completamente distinta, con el objetivo de disminuir el tamaño y el desorden de `MOD/`
@@ -38,7 +43,7 @@ Aunque el *Engine* está basado en *Psych*, la estructura es completamente disti
 
 ::: callout tip Pro Tip :gentleBlob:
 Si las carpetas por alguna razón no funcionan
--# Ya sea por un error al escribir la documentación o porque la página está desactualizada
+Ya sea por un error al escribir la documentación o porque la página está desactualizada
 
 Puedes tomar como base la carpeta `ROOT/assets`
 :::

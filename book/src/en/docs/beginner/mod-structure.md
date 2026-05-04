@@ -1,4 +1,10 @@
-﻿## Mod Structure
+---
+author: AlejoGDOfficial
+lang: en
+translator: ImMalloy
+---
+
+## Mod Structure
 
 Although the *Engine* is based on *Psych*, the structure is completely different, with the goal of reducing the size and clutter of `MOD/`
 

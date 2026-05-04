@@ -1,3 +1,8 @@
+---
+author: AlejoGDOfficial
+lang: es
+---
+
 ## Aclaraciones
 
 Antes de continuar, haré algunas especificaciones :calvinEnojao:

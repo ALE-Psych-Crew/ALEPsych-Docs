@@ -1,11 +1,17 @@
+---
+author: ImMalloy
+lang: es
+---
+
 # Documentación de ALE Psych
 
 ![ALE Psych Logo](https://github.com/ALE-Psych-Crew/ALE-Psych/raw/main/art/githubLogo.png)
 
 ## *"Si Psych es tan bueno, ¿por qué no existe Psych 2?"*
 
-En esta página podrás encontrar almenos la información necesaria para empezar con tu *mod* en **ALE Psych** :alejito:
--# Diríjase [Aquí](./docs/)
+En esta página podrás encontrar al menos la información necesaria para empezar con tu *mod* en **ALE Psych** :alejito:
+
+Diríjase [Aquí](./docs/)
 
 ---
 

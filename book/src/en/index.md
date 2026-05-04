@@ -1,4 +1,10 @@
-﻿# ALE Psych Documentation
+---
+author: ImMalloy
+lang: en
+translator: ImMalloy
+---
+
+# ALE Psych Documentation
 
 ![ALE Psych Logo](https://github.com/ALE-Psych-Crew/ALE-Psych/raw/main/art/githubLogo.png)
 

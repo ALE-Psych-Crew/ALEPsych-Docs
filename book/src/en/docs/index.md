@@ -1,4 +1,10 @@
-﻿## Clarifications
+---
+author: AlejoGDOfficial
+lang: en
+translator: ImMalloy
+---
+
+## Clarifications
 
 Before continuing, I will make a few specifications :calvinEnojao:
 

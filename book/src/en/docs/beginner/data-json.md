@@ -1,4 +1,4 @@
-﻿---
+---
 author: AlejoGDOfficial
 lang: en
 translator: ImMalloy
