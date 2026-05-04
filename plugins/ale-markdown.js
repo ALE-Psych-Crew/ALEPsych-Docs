@@ -106,67 +106,89 @@ module.exports = {
 .ale-credit-avatar-inline { width: 22px; height: 22px; }
 .ale-credit-sep { opacity: 0.6; }
 
-.ale-sticky-pager {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
+.ale-bottom-nav {
   display: flex;
-  gap: 8px;
-  z-index: 999;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0.75rem;
 }
-.ale-sticky-pager a,
-.ale-sticky-pager span {
+.ale-bottom-nav button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 94px;
-  padding: 8px 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 0.65rem 0.9rem;
   border-radius: 10px;
-  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
-  background: color-mix(in srgb, var(--docmd-bg, #fff) 88%, transparent);
-  backdrop-filter: blur(6px);
-  text-decoration: none;
-  font-size: 0.82rem;
+  border: none;
+  cursor: pointer;
+  background: var(--docmd-accent, #3b82f6);
+  color: #fff;
+  font-size: 0.86rem;
+  line-height: 1.2;
+  text-align: center;
+  flex: 1 1 0;
 }
-.ale-sticky-pager span { opacity: 0.45; cursor: not-allowed; }
+.ale-bottom-nav button:hover { filter: brightness(1.06); }
+.ale-bottom-nav button:active { transform: translateY(1px); }
+.ale-bottom-nav button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.2);
+}
+.ale-bottom-nav button .ale-sub { opacity: 0.92; font-size: 0.76rem; display: block; margin-top: 0.15rem; }
 @media (max-width: 720px) {
-  .ale-sticky-pager { left: 12px; right: 12px; bottom: 12px; }
-  .ale-sticky-pager a, .ale-sticky-pager span { flex: 1; min-width: 0; }
+  .ale-bottom-nav { flex-direction: column; }
 }
 </style>
 <script>
 (function () {
-  function mk(label, href) {
-    if (!href) {
-      const s = document.createElement('span');
-      s.textContent = label;
-      return s;
+  function mkButton(label, href, subLabel, disabled) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.innerHTML = subLabel ? (label + '<span class="ale-sub">' + subLabel + '</span>') : label;
+    if (disabled || !href) {
+      btn.disabled = true;
+      return btn;
     }
-    const a = document.createElement('a');
-    a.href = href;
-    a.textContent = label;
-    return a;
+    btn.addEventListener('click', function () { window.location.href = href; });
+    return btn;
   }
 
-  function buildPager() {
-    const old = document.querySelector('.ale-sticky-pager');
+  function buildBottomNav() {
+    const old = document.querySelector('.ale-bottom-nav');
     if (old) old.remove();
 
-    const prev = document.querySelector('a[rel="prev"]');
-    const next = document.querySelector('a[rel="next"]');
+    const prev = document.querySelector('a[rel="prev"]') || document.querySelector('link[rel="prev"]');
+    const next = document.querySelector('a[rel="next"]') || document.querySelector('link[rel="next"]');
 
-    const wrap = document.createElement('nav');
-    wrap.className = 'ale-sticky-pager';
+    const prevHref = prev ? (prev.getAttribute('href') || prev.href) : null;
+    const nextHref = next ? (next.getAttribute('href') || next.href) : null;
+
+    const lang = document.documentElement.lang || '';
+    const isEs = lang.toLowerCase().startsWith('es');
+
+    const prevLabel = isEs ? 'Página anterior' : 'Previous page';
+    const nextLabel = isEs ? 'Página siguiente' : 'Next page';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'ale-bottom-nav';
     wrap.setAttribute('aria-label', 'Page navigation');
 
-    wrap.appendChild(mk('← Previous', prev ? prev.getAttribute('href') : null));
-    wrap.appendChild(mk('Next →', next ? next.getAttribute('href') : null));
+    wrap.appendChild(mkButton('← ' + prevLabel, prevHref, null, !prevHref));
+    wrap.appendChild(mkButton(nextLabel + ' →', nextHref, null, !nextHref));
 
-    document.body.appendChild(wrap);
+    const anchor = document.querySelector('.ale-page-credit');
+    if (anchor && anchor.parentNode) {
+      anchor.parentNode.insertBefore(wrap, anchor);
+      return;
+    }
+    const content = document.querySelector('main') || document.body;
+    content.appendChild(wrap);
   }
 
-  window.addEventListener('load', buildPager);
-  document.addEventListener('DOMContentLoaded', buildPager);
+  window.addEventListener('load', buildBottomNav);
+  document.addEventListener('DOMContentLoaded', buildBottomNav);
 })();
 </script>`
     };
