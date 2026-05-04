@@ -152,6 +152,16 @@ module.exports = {
     }
   }
 
+  function withBase(href) {
+    if (!href) return href;
+    var base = (window.DOCMD_BASE || '/').replace(/\/+$/, '');
+    if (!base) base = '/';
+    if (!href.startsWith('/')) return href;
+    if (href === '/') return base + '/';
+    if (base !== '/' && !href.startsWith(base + '/')) return base + href;
+    return href;
+  }
+
   function mkButton(label, href, disabled) {
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -180,7 +190,8 @@ module.exports = {
         if (!path || seen.has(path)) continue;
 
         seen.add(path);
-        links.push({ path: path, href: new URL(href, window.location.origin).pathname });
+        var rawPath = new URL(href, window.location.origin).pathname;
+        links.push({ path: path, href: withBase(rawPath) });
       }
       if (links.length) break;
     }
@@ -197,7 +208,7 @@ module.exports = {
         base + '/en/docs/beginner/mod-folder',
         base + '/en/docs/beginner/mod-structure',
         base + '/en/docs/beginner/data-json'
-      ].map(function (p) { return { path: p, href: p + '/' }; });
+      ].map(function (p) { return { path: p, href: withBase(p + '/') }; });
     }
 
     return [
@@ -206,7 +217,7 @@ module.exports = {
       base + '/docs/beginner/mod-folder',
       base + '/docs/beginner/mod-structure',
       base + '/docs/beginner/data-json'
-    ].map(function (p) { return { path: p, href: p + '/' }; });
+    ].map(function (p) { return { path: p, href: withBase(p + '/') }; });
   }
 
   function findIndex(pages, currentPath) {
