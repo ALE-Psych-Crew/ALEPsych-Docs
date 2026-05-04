@@ -1,26 +1,11 @@
-﻿---
-author: AlejoGDOfficial
-lang: en
-translator: ImMalloy
----
+﻿## Mod Folder
 
-# Mod Folder
+I think this explains itself :blobCookie:
 
-## Reserved names (do not use this as your mod name)
+1. Open `ROOT/mods/`
+2. Create a folder with your *mod* name
 
-The selector ignores folders with these names:
-
-- `characters`
-- `events`
-- `noteTypes`
-- `data`
-- `songs`
-- `music`
-- `sounds`
-- `shaders`
-- `videos`
-- `images`
-- `stages`
-- `weeks`
-- `fonts`
-- `scripts`
+::: callout tip Pro Tip :gentleBlob:
+You can go to the *mod* selection menu using `Ctrl + Shift + M`
+This can be customized through the options menu
+:::

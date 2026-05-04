@@ -1,28 +1,13 @@
-﻿---
-author: AlejoGDOfficial
-lang: en
-translator: ImMalloy
----
+﻿## Clarifications
 
-# Clarifications
+Before continuing, I will make a few specifications :calvinEnojao:
 
-Before continuing, a few quick things so nothing explodes :calvinEnojao:
+1. When specifying paths, a couple of things must be taken into account
+    - If the file-reference *snippet* contains a trailing `/`, it indicates that it refers to a folder
+    - `ROOT/` refers to the root folder of the *Engine*, where its executable is located
+    - `MOD/` refers to `ROOT/mods/MOD_NAME`
+    - `SONG/` refers to the folder of the song you want to modify
 
-1. When reading paths, keep this in mind:
-   - If the *snippet* ends with `/`, we are talking about a folder.
-   - `ROOT/` = root folder of the *Engine* (where the executable is).
-   - `MOD/` = `ROOT/mods/MOD_NAME`.
-   - `SONG/` = song folder inside `MOD/songs/`.
+2. The current "edition" of the *Engine* was started around mid-January. Because of this, there are still things subject to change
 
-2. This "edition" of the *Engine* started around mid-January, so yes, there are still things subject to change.
-
-3. Since the *Engine* still does not include its own editors, it is recommended to use [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) editors to create some `.json` files.
-
-## Real load order (very important)
-
-When you select a mod, the engine first checks your mod and then base `assets`.
-
-1. `ROOT/mods/MOD_NAME/...`
-2. `ROOT/assets/...`
-
-This lets you override base content by replicating the same path inside your mod.
+3. Because the *Engine* still does **not** have editors, it is recommended to use those from [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) to create some of the `.json` files
