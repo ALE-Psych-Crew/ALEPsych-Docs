@@ -196,10 +196,24 @@ module.exports = {
 
     const pages = collectSidebarPages();
     const currentPath = normalizePath(window.location.pathname);
-    const idx = pages.findIndex((p) => p.path === currentPath);
+    let orderedPages = pages;
 
-    const prevHref = idx > 0 ? pages[idx - 1].href : null;
-    const nextHref = idx >= 0 && idx < pages.length - 1 ? pages[idx + 1].href : null;
+    if (!orderedPages.length) {
+      const isEnPath = currentPath.includes('/en');
+      const fallback = isEnPath
+        ? ['/ALEPsych-Docs/en', '/ALEPsych-Docs/en/docs', '/ALEPsych-Docs/en/docs/beginner/mod-folder', '/ALEPsych-Docs/en/docs/beginner/mod-structure', '/ALEPsych-Docs/en/docs/beginner/data-json']
+        : ['/ALEPsych-Docs', '/ALEPsych-Docs/docs', '/ALEPsych-Docs/docs/beginner/mod-folder', '/ALEPsych-Docs/docs/beginner/mod-structure', '/ALEPsych-Docs/docs/beginner/data-json'];
+      orderedPages = fallback.map((p) => ({ path: p, href: p + '/' }));
+    }
+
+    let idx = orderedPages.findIndex((p) => p.path === currentPath);
+    if (idx < 0) {
+      const noBase = currentPath.replace('/ALEPsych-Docs', '');
+      idx = orderedPages.findIndex((p) => p.path.replace('/ALEPsych-Docs', '') === noBase);
+    }
+
+    const prevHref = idx > 0 ? orderedPages[idx - 1].href : null;
+    const nextHref = idx >= 0 && idx < orderedPages.length - 1 ? orderedPages[idx + 1].href : null;
 
     const lang = document.documentElement.lang || '';
     const isEs = lang.toLowerCase().startsWith('es');
