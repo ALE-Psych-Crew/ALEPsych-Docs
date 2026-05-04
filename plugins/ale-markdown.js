@@ -159,11 +159,47 @@ module.exports = {
     const old = document.querySelector('.ale-bottom-nav');
     if (old) old.remove();
 
-    const prev = document.querySelector('a[rel="prev"]') || document.querySelector('link[rel="prev"]');
-    const next = document.querySelector('a[rel="next"]') || document.querySelector('link[rel="next"]');
+    function normalizePath(path) {
+      try {
+        const u = new URL(path, window.location.origin);
+        let p = u.pathname.replace(/\/+$/, '');
+        return p === '' ? '/' : p;
+      } catch (_) {
+        return null;
+      }
+    }
 
-    const prevHref = prev ? (prev.getAttribute('href') || prev.href) : null;
-    const nextHref = next ? (next.getAttribute('href') || next.href) : null;
+    function collectSidebarPages() {
+      const selectors = [
+        'aside a[href]',
+        '.sidebar a[href]',
+        '[aria-label="Main navigation"] a[href]'
+      ];
+      const links = [];
+      const seen = new Set();
+
+      for (const sel of selectors) {
+        document.querySelectorAll(sel).forEach((a) => {
+          const href = a.getAttribute('href');
+          if (!href || href.startsWith('#')) return;
+          const path = normalizePath(href);
+          if (!path) return;
+          if (seen.has(path)) return;
+          seen.add(path);
+          links.push({ path, href: new URL(href, window.location.origin).pathname });
+        });
+        if (links.length) break;
+      }
+
+      return links;
+    }
+
+    const pages = collectSidebarPages();
+    const currentPath = normalizePath(window.location.pathname);
+    const idx = pages.findIndex((p) => p.path === currentPath);
+
+    const prevHref = idx > 0 ? pages[idx - 1].href : null;
+    const nextHref = idx >= 0 && idx < pages.length - 1 ? pages[idx + 1].href : null;
 
     const lang = document.documentElement.lang || '';
     const isEs = lang.toLowerCase().startsWith('es');
