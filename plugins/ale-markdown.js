@@ -1,16 +1,16 @@
 module.exports = {
   plugin: {
     name: 'ale-markdown',
-    version: '1.1.1',
+    version: '1.2.0',
     capabilities: ['markdown', 'build', 'body']
   },
 
   markdownSetup(md) {
-    const emojis = [
+    const emojis = new Set([
       'alejito', 'aySi', 'calvinEnojao', 'calvinPlan', 'jonk', 'meVoid',
       'ommmHD', 'semmi', 'thx', 'trollface', 'blobCookie', 'gentleBlob',
       'qdijiste', 'queHasDicho'
-    ];
+    ]);
 
     const defaultRender = md.renderer.rules.text || function (tokens, idx) {
       return tokens[idx].content;
@@ -22,12 +22,11 @@ module.exports = {
       let content = defaultRender(tokens, idx, options, env, self);
 
       content = content.replace(/:([a-zA-Z0-9_]+):/g, (match, name) => {
-        if (emojis.includes(name)) {
-          return `<img src="${assetBase}${name}.png" class="emoji" alt="${name}">`;
-        }
-        return match;
+        if (!emojis.has(name)) return match;
+        return `<img src="${assetBase}${name}.png" class="emoji" alt="${name}">`;
       });
 
+      // Discord-style side note marker
       content = content.replace(/(^|\n)-#\s*([^\n]+)/g, '$1<sub>$2</sub>');
       return content;
     };
@@ -35,40 +34,41 @@ module.exports = {
 
   onAfterParse(html, frontmatter = {}) {
     const author = frontmatter.author;
-    const authorUrl = frontmatter.author_url || (author ? `https://github.com/${author}` : null);
-    const authorAvatar = frontmatter.author_avatar || (author ? `https://github.com/${author}.png?size=64` : null);
-    const lang = frontmatter.lang || 'en';
+    if (!author) return html;
 
-    if (!author || !authorUrl) {
-      return html;
-    }
+    const lang = frontmatter.lang === 'es' ? 'es' : 'en';
+
+    const authorUrl = frontmatter.author_url || `https://github.com/${author}`;
+    const authorAvatar = frontmatter.author_avatar || `https://github.com/${author}.png?size=64`;
 
     const translator = frontmatter.translator;
-    const translatorUrl = frontmatter.translator_url || (translator ? `https://github.com/${translator}` : null);
-    const translatorAvatar = frontmatter.translator_avatar || (translator ? `https://github.com/${translator}.png?size=64` : null);
+    const translatorUrl = translator ? (frontmatter.translator_url || `https://github.com/${translator}`) : null;
+    const translatorAvatar = translator ? (frontmatter.translator_avatar || `https://github.com/${translator}.png?size=64`) : null;
 
     const byLabel = lang === 'es' ? 'Escrito por' : 'Written by';
     const trLabel = lang === 'es' ? 'Traducido por' : 'Translated by';
 
-    const avatarHtml = authorAvatar
-      ? `<a href="${authorUrl}" target="_blank" rel="noopener noreferrer"><img src="${authorAvatar}" alt="${author}" class="ale-credit-avatar"></a>`
-      : '';
-
-    const translatorAvatarHtml = translatorAvatar
-      ? `<a href="${translatorUrl}" target="_blank" rel="noopener noreferrer"><img src="${translatorAvatar}" alt="${translator}" class="ale-credit-avatar ale-credit-avatar-inline"></a>`
-      : '';
+    const authorHtml = `
+      <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">
+        <img src="${authorAvatar}" alt="${author}" class="ale-credit-avatar">
+      </a>
+      <span>${byLabel} <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${author}</a></span>
+    `;
 
     const translatorHtml = translator && translatorUrl
-      ? `<span class="ale-credit-sep">•</span><span class="ale-credit-inline">${translatorAvatarHtml}<span>${trLabel} <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">${translator}</a></span></span>`
+      ? `
+      <span class="ale-credit-sep">&bull;</span>
+      <span class="ale-credit-inline">
+        <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">
+          <img src="${translatorAvatar}" alt="${translator}" class="ale-credit-avatar ale-credit-avatar-inline">
+        </a>
+        <span>${trLabel} <a href="${translatorUrl}" target="_blank" rel="noopener noreferrer">${translator}</a></span>
+      </span>`
       : '';
 
     const creditHtml = `
 <section class="ale-page-credit" aria-label="page credits">
-  ${avatarHtml}
-  <div class="ale-page-credit-text">
-    <span>${byLabel} <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${author}</a></span>
-    ${translatorHtml}
-  </div>
+  <div class="ale-page-credit-text">${authorHtml}${translatorHtml}</div>
 </section>`;
 
     return `${html}${creditHtml}`;
@@ -82,28 +82,28 @@ module.exports = {
   margin-top: 2rem;
   padding-top: 0.85rem;
   border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
   opacity: 0.9;
   font-size: 0.9rem;
 }
+.ale-page-credit-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  line-height: 1.25;
+}
 .ale-credit-avatar {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: block;
 }
-.ale-page-credit-text {
-  display: flex;
-  gap: 0.45rem;
-  flex-wrap: wrap;
+.ale-credit-avatar-inline { width: 20px; height: 20px; }
+.ale-credit-inline {
+  display: inline-flex;
   align-items: center;
-  line-height: 1.25;
+  gap: 0.4rem;
 }
-.ale-page-credit-text > span { display: inline-flex; align-items: center; }
-.ale-credit-inline { display: inline-flex; align-items: center; gap: 0.4rem; }
-.ale-credit-avatar-inline { width: 22px; height: 22px; }
 .ale-credit-sep { opacity: 0.6; }
 
 .ale-bottom-nav {
@@ -136,17 +136,26 @@ module.exports = {
   cursor: not-allowed;
   filter: grayscale(0.2);
 }
-.ale-bottom-nav button .ale-sub { opacity: 0.92; font-size: 0.76rem; display: block; margin-top: 0.15rem; }
 @media (max-width: 720px) {
   .ale-bottom-nav { flex-direction: column; }
 }
 </style>
 <script>
 (function () {
-  function mkButton(label, href, subLabel, disabled) {
-    const btn = document.createElement('button');
+  function normalizePath(input) {
+    try {
+      var u = new URL(input, window.location.origin);
+      var p = u.pathname.replace(/\\/+$/, '');
+      return p || '/';
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function mkButton(label, href, disabled) {
+    var btn = document.createElement('button');
     btn.type = 'button';
-    btn.innerHTML = subLabel ? (label + '<span class="ale-sub">' + subLabel + '</span>') : label;
+    btn.textContent = label;
     if (disabled || !href) {
       btn.disabled = true;
       return btn;
@@ -155,90 +164,107 @@ module.exports = {
     return btn;
   }
 
+  function collectSidebarPages() {
+    var selectors = ['[aria-label="Main navigation"] a[href]', 'aside a[href]', '.sidebar a[href]'];
+    var links = [];
+    var seen = new Set();
+
+    for (var i = 0; i < selectors.length; i++) {
+      var nodes = document.querySelectorAll(selectors[i]);
+      for (var j = 0; j < nodes.length; j++) {
+        var a = nodes[j];
+        var href = a.getAttribute('href');
+        if (!href || href.charAt(0) === '#') continue;
+
+        var path = normalizePath(href);
+        if (!path || seen.has(path)) continue;
+
+        seen.add(path);
+        links.push({ path: path, href: new URL(href, window.location.origin).pathname });
+      }
+      if (links.length) break;
+    }
+
+    return links;
+  }
+
+  function fallbackPages(isEn) {
+    var base = '/ALEPsych-Docs';
+    if (isEn) {
+      return [
+        base + '/en',
+        base + '/en/docs',
+        base + '/en/docs/beginner/mod-folder',
+        base + '/en/docs/beginner/mod-structure',
+        base + '/en/docs/beginner/data-json'
+      ].map(function (p) { return { path: p, href: p + '/' }; });
+    }
+
+    return [
+      base,
+      base + '/docs',
+      base + '/docs/beginner/mod-folder',
+      base + '/docs/beginner/mod-structure',
+      base + '/docs/beginner/data-json'
+    ].map(function (p) { return { path: p, href: p + '/' }; });
+  }
+
+  function findIndex(pages, currentPath) {
+    var idx = pages.findIndex(function (p) { return p.path === currentPath; });
+    if (idx >= 0) return idx;
+
+    var noBase = currentPath.replace('/ALEPsych-Docs', '');
+    return pages.findIndex(function (p) {
+      return p.path.replace('/ALEPsych-Docs', '') === noBase;
+    });
+  }
+
   function buildBottomNav() {
-    const old = document.querySelector('.ale-bottom-nav');
+    var old = document.querySelector('.ale-bottom-nav');
     if (old) old.remove();
 
-    function normalizePath(path) {
-      try {
-        const u = new URL(path, window.location.origin);
-        let p = u.pathname.replace(/\/+$/, '');
-        return p === '' ? '/' : p;
-      } catch (_) {
-        return null;
-      }
-    }
+    var currentPath = normalizePath(window.location.pathname) || '/';
+    var isEn = currentPath.indexOf('/en') >= 0 || ((document.documentElement.lang || '').toLowerCase().indexOf('en') === 0);
 
-    function collectSidebarPages() {
-      const selectors = [
-        'aside a[href]',
-        '.sidebar a[href]',
-        '[aria-label="Main navigation"] a[href]'
-      ];
-      const links = [];
-      const seen = new Set();
+    var pages = collectSidebarPages();
+    if (!pages.length) pages = fallbackPages(isEn);
 
-      for (const sel of selectors) {
-        document.querySelectorAll(sel).forEach((a) => {
-          const href = a.getAttribute('href');
-          if (!href || href.startsWith('#')) return;
-          const path = normalizePath(href);
-          if (!path) return;
-          if (seen.has(path)) return;
-          seen.add(path);
-          links.push({ path, href: new URL(href, window.location.origin).pathname });
-        });
-        if (links.length) break;
-      }
+    var idx = findIndex(pages, currentPath);
+    if (idx < 0) idx = findIndex(fallbackPages(isEn), currentPath);
 
-      return links;
-    }
+    var prevHref = idx > 0 ? pages[idx - 1].href : null;
+    var nextHref = idx >= 0 && idx < pages.length - 1 ? pages[idx + 1].href : null;
 
-    const pages = collectSidebarPages();
-    const currentPath = normalizePath(window.location.pathname);
-    let orderedPages = pages;
+    var prevLabel = isEn ? '← Previous page' : '← Página anterior';
+    var nextLabel = isEn ? 'Next page →' : 'Página siguiente →';
 
-    if (!orderedPages.length) {
-      const isEnPath = currentPath.includes('/en');
-      const fallback = isEnPath
-        ? ['/ALEPsych-Docs/en', '/ALEPsych-Docs/en/docs', '/ALEPsych-Docs/en/docs/beginner/mod-folder', '/ALEPsych-Docs/en/docs/beginner/mod-structure', '/ALEPsych-Docs/en/docs/beginner/data-json']
-        : ['/ALEPsych-Docs', '/ALEPsych-Docs/docs', '/ALEPsych-Docs/docs/beginner/mod-folder', '/ALEPsych-Docs/docs/beginner/mod-structure', '/ALEPsych-Docs/docs/beginner/data-json'];
-      orderedPages = fallback.map((p) => ({ path: p, href: p + '/' }));
-    }
-
-    let idx = orderedPages.findIndex((p) => p.path === currentPath);
-    if (idx < 0) {
-      const noBase = currentPath.replace('/ALEPsych-Docs', '');
-      idx = orderedPages.findIndex((p) => p.path.replace('/ALEPsych-Docs', '') === noBase);
-    }
-
-    const prevHref = idx > 0 ? orderedPages[idx - 1].href : null;
-    const nextHref = idx >= 0 && idx < orderedPages.length - 1 ? orderedPages[idx + 1].href : null;
-
-    const lang = document.documentElement.lang || '';
-    const isEs = lang.toLowerCase().startsWith('es');
-
-    const prevLabel = isEs ? 'Página anterior' : 'Previous page';
-    const nextLabel = isEs ? 'Página siguiente' : 'Next page';
-
-    const wrap = document.createElement('div');
+    var wrap = document.createElement('div');
     wrap.className = 'ale-bottom-nav';
     wrap.setAttribute('aria-label', 'Page navigation');
 
-    wrap.appendChild(mkButton('← ' + prevLabel, prevHref, null, !prevHref));
-    wrap.appendChild(mkButton(nextLabel + ' →', nextHref, null, !nextHref));
+    wrap.appendChild(mkButton(prevLabel, prevHref, !prevHref));
+    wrap.appendChild(mkButton(nextLabel, nextHref, !nextHref));
 
-    const anchor = document.querySelector('.ale-page-credit');
+    var anchor = document.querySelector('.ale-page-credit');
     if (anchor && anchor.parentNode) {
       anchor.parentNode.insertBefore(wrap, anchor);
       return;
     }
-    const content = document.querySelector('main') || document.body;
+
+    var content = document.querySelector('main') || document.body;
     content.appendChild(wrap);
   }
 
-  window.addEventListener('load', buildBottomNav);
-  document.addEventListener('DOMContentLoaded', buildBottomNav);
+  function scheduleBuilds() {
+    buildBottomNav();
+    setTimeout(buildBottomNav, 50);
+    setTimeout(buildBottomNav, 250);
+    setTimeout(buildBottomNav, 800);
+  }
+
+  window.addEventListener('load', scheduleBuilds);
+  document.addEventListener('DOMContentLoaded', scheduleBuilds);
+  scheduleBuilds();
 })();
 </script>`
     };
