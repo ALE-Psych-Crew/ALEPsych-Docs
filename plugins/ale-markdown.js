@@ -145,7 +145,7 @@ module.exports = {
   function normalizePath(input) {
     try {
       var u = new URL(input, window.location.origin);
-      var p = u.pathname.replace(/\\/+$/, '');
+      var p = u.pathname.replace(/\\\\/+$/, '');
       return p || '/';
     } catch (_) {
       return null;
@@ -154,7 +154,7 @@ module.exports = {
 
   function withBase(href) {
     if (!href) return href;
-    var base = (window.DOCMD_BASE || '/').replace(/\/+$/, '');
+    var base = (window.DOCMD_BASE || '/').replace(/\\\\/+$/, '');
     if (!base) base = '/';
     if (!href.startsWith('/')) return href;
     if (href === '/') return base + '/';
@@ -246,8 +246,8 @@ module.exports = {
     var prevHref = idx > 0 ? pages[idx - 1].href : null;
     var nextHref = idx >= 0 && idx < pages.length - 1 ? pages[idx + 1].href : null;
 
-    var prevLabel = isEn ? '← Previous page' : '← Página anterior';
-    var nextLabel = isEn ? 'Next page →' : 'Página siguiente →';
+    var prevLabel = isEn ? '<- Previous page' : '<- Pagina anterior';
+    var nextLabel = isEn ? 'Next page ->' : 'Pagina siguiente ->';
 
     var wrap = document.createElement('div');
     wrap.className = 'ale-bottom-nav';
