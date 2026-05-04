@@ -1,107 +1,50 @@
 ---
-author: ImMalloy
+author: AlejoGDOfficial
 lang: es
 ---
 
-# Data.json
+## data.json
 
-## Cómo lo carga ALE Psych
+En todo *mod* se debe incluir este archivo, debido a que este define aspectos importantes del juego, sobre todo, las opciones de desarrollador. :ommmHD:
 
-::: collapsible open "Orden de lectura real"
-Según `CoolVars.loadMetadata()`:
-
-1. Carga valores por defecto internos del engine.
-2. Si existe `assets/data/data.json`, aplica esos campos.
-3. Si hay mod activo y existe `mods/<mod>/data/data.json`, aplica esos campos.
-
-Resultado: tu mod puede sobrescribir la configuración base campo por campo.
-:::
-
-## Estructura completa (campos)
-
-| Campo | Tipo | Default | ¿Qué hace? |
+| Campo | Tipo | Valor | Función |
 |---|---|---|---|
-| `developerMode` | `Bool` | `false` | Habilita comportamientos de desarrollo junto con otros flags. |
-| `mobileDebug` | `Bool` | `false` | En desktop, activa ruta de debug móvil cuando `developerMode` también está en `true`. |
-| `scriptsHotReloading` | `Bool` | `false` | Activa recarga en caliente de scripts (si el flujo actual lo usa). |
-| `verbose` | `Bool` | `false` | Más salida detallada/logs internos. |
-| `allowDebugPrint` | `Bool` | `true` | Permite impresiones de debug. |
-| `initialState` | `String` | `"TitleState"` | Estado inicial al abrir el juego. |
-| `freeplayState` | `String` | `"FreeplayState"` | Clase de estado para Freeplay. |
-| `storyMenuState` | `String` | `"StoryMenuState"` | Clase de estado para Story Menu. |
-| `masterEditorState` | `String` | `"MasterEditorState"` | Clase de estado del editor maestro. |
-| `mainMenuState` | `String` | `"MainMenuState"` | Clase de estado del menú principal. |
-| `optionsState` | `String` | `"OptionsState"` | Clase de estado del menú de opciones. |
-| `pauseSubState` | `String` | `"PauseSubState"` | Subestado de pausa durante gameplay. |
-| `gameOverScreen` | `String` | `"GameOverSubState"` | Subestado/pantalla de game over. |
-| `transition` | `String` | `"FadeTransition"` | Clase usada para transiciones de pantalla. |
-| `loadDefaultWeeks` | `Bool` | `true` | Controla si se cargan weeks por defecto del engine. |
-| `title` | `String` | `"Friday Night Funkin': ALE Psych"` | Título de la ventana. |
-| `icon` | `String` | `"images/appIcon"` | Ruta base del icono de app/ventana. |
-| `width` | `Int` | `1280` | Ancho de ventana/resolución inicial. |
-| `height` | `Int` | `720` | Alto de ventana/resolución inicial. |
-| `windowColor` | `Array<Int>` | `[33,33,33]` | Color de borde de ventana (RGB). |
-| `bpm` | `Float` | `102.0` | BPM global usado por lógica/elementos dependientes. |
-| `discordID` | `String` | `"1309982575368077416"` | App ID de Discord RPC. |
-| `discordButtons` | `Array<Object>` | botón al sitio ALE | Botones mostrados en Rich Presence. |
-| `modID` | `String \| null` | `null` | ID usado en rutas de guardado/mod support. |
+| `developerMode` | `Bool` | `false` | Permite que las herramientas de desarollador sean habilitadas |
+| `mobileDebug` | `Bool` | `false` | En plataformas de escritorio, permite visualizar la interfaz como si se estuviera en móvil |
+| `scriptsHotReloading` | `Bool` | `false` | Permite que los *scripts* reinicien el *state* actual al ser editados |
+| `verbose` | `Bool` | `false` | Habilita *prints/logs* de más cosas (Útil para visualizar con más precisión que hace o no el juego) |
+| `allowDebugPrint` | `Bool` | `true` | Permite la visualización de *prints* en la ventana del juego |
+| `initialState` | `String` | `"TitleState"` | *State* mostrado al iniciar el juego |
+| `freeplayState` | `String` | `"FreeplayState"` | *State* mostrado para el *Freeplay* |
+| `storyMenuState` | `String` | `"StoryMenuState"` | *State* mostrado para el Menú del *Modo Historia* |
+| `masterEditorState` | `String` | `"MasterEditorState"` | *State* mostrado para el Menú de Editores |
+| `mainMenuState` | `String` | `"MainMenuState"` | *State* mostrado para el Menú Principal |
+| `optionsState` | `String` | `"OptionsState"` | *State* mostrado para el Menú de Opciones |
+| `pauseSubState` | `String` | `"PauseSubState"` | *SubState* mostrado para el Menú de Pausa |
+| `gameOverScreen` | `String` | `"GameOverSubState"` | *SubState* mostrado para la Pantalla de GameOver |
+| `transition` | `String` | `"FadeTransition"` | *SubState* mostrado durante la transición entre menús |
+| `loadDefaultWeeks` | `Bool` | `true` | Define si se cargan las *weeks* de `ASSETS/` |
+| `title` | `String` | `"Friday Night Funkin': ALE Psych"` | Título de la ventana |
+| `icon` | `String` | `"images/appIcon"` | Ruta del Ícono de la *App* (A partir de `MOD/`) |
+| `width` | `Int` | `1280` | Anchura del Juego |
+| `height` | `Int` | `720` | Altura del Juego |
+| `windowColor` | `Array<Int>` | `[33, 33, 33]` | Color de borde de la Ventana (RGB) |
+| `bpm` | `Float` | `102.0` | BPM usado en los Menús |
+| `discordID` | `String` | `"1309982575368077416"` | *App ID* del *Discord RPC* |
+| `discordButtons` | `Array<ALEDataDiscordButton>` | `[...]` | Botones mostrados en el *Discord RPC* |
+| `modID` | `Null<String>` | `null` | Ruta de los Archivos de Guardado |
 
-## `discordButtons` (sub-estructura)
+### `ALEDataDiscordButton`
 
-Cada entrada usa este formato:
-
-| Campo | Tipo | Descripción |
+| Campo | Tipo | Función |
 |---|---|---|
-| `label` | `String \| null` | Texto del botón en Discord. |
-| `url` | `String \| null` | URL que abrirá Discord al pulsar el botón. |
-
-## Ejemplo completo
-
-```json
-{
-  "developerMode": false,
-  "mobileDebug": false,
-  "scriptsHotReloading": false,
-  "verbose": false,
-  "allowDebugPrint": true,
-
-  "initialState": "TitleState",
-  "freeplayState": "FreeplayState",
-  "storyMenuState": "StoryMenuState",
-  "masterEditorState": "MasterEditorState",
-  "mainMenuState": "MainMenuState",
-  "optionsState": "OptionsState",
-
-  "pauseSubState": "PauseSubState",
-  "gameOverScreen": "GameOverSubState",
-  "transition": "FadeTransition",
-
-  "loadDefaultWeeks": true,
-
-  "title": "Friday Night Funkin': ALE Psych",
-  "icon": "images/appIcon",
-  "width": 1280,
-  "height": 720,
-  "windowColor": [33, 33, 33],
-
-  "bpm": 102.0,
-
-  "discordID": "1309982575368077416",
-  "discordButtons": [
-    {
-      "label": "ALE Psych Website",
-      "url": "https://ale-psych-crew.github.io/ALE-Psych-Website/"
-    }
-  ],
-
-  "modID": null
-}
-```
-
-::: callout warning Ojo Con Esto :queHasDicho:
-Si escribes un nombre de clase inválido en campos como `initialState` o `mainMenuState`, el juego puede romper arranque o navegación.
-:::
+| `label` | `Null<String>` | Texto del Botón |
+| `url` | `Null<String>` | URL del Botón |
 
 ::: callout tip Pro Tip :gentleBlob:
-Edita poco a poco: cambia 1 bloque, prueba, luego sigue. Así detectas errores rápido y no te explota todo junto.
+Añade a tu archivo solamente los campos que vayas a sobreescribir
+:::
+
+::: callout danger ¡Cuidado! :qdijiste:
+Si indicas un *state* que no existe en el campo `initialState`, el juego mantendrá la pantalla en negro hasta que se reinicie o se elija un *mod* que contenga el *state* indicado
 :::

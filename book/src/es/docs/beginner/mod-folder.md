@@ -1,25 +1,11 @@
----
-author: AlejoGDOfficial
-lang: es
----
+## Carpeta del Mod
 
-# Carpeta del Mod
+Creo que se explica solo :blobCookie:
 
-## Nombres reservados (no uses esto como nombre de mod)
+1. Abrir `ROOT/mods/`
+2. Crear una carpeta con el nombre de tu *mod*
 
-El selector ignora carpetas con estos nombres:
-
-- `characters`
-- `events`
-- `noteTypes`
-- `data`
-- `songs`
-- `music`
-- `sounds`
-- `shaders`
-- `videos`
-- `images`
-- `stages`
-- `weeks`
-- `fonts`
-- `scripts`
+::: callout tip Pro Tip :gentleBlob:
+Puedes dirigirte al menú de selección de *mods* usando `Ctrl + Shift + M`
+-# Esto siendo personalizable por medio del menú de opciones
+:::

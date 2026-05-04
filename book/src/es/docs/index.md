@@ -1,27 +1,13 @@
----
-author: AlejoGDOfficial
-lang: es
----
+## Aclaraciones
 
-# Aclaraciones
+Antes de continuar, haré algunas especificaciones :calvinEnojao:
 
-Antes de seguir, unas cositas rápidas para que no explote nada :calvinEnojao:
+1. A la hora de específicar rutas se deben tener en cuenta un par de cosas
+    - Si el *snippet* que hace referencia a un archivo contiene un "`/`" al final, indica que se está refiriendo a una carpeta
+    - `ROOT/` hace referencia a la carpeta raíz del *Engine*, aquella en la que se encuentra el ejecutable del mismo
+    - `MOD/` hace referencia a `ROOT/mods/NOMBRE_DEL_MOD`'
+    - `SONG/` hace referencia a la carpeta de la cancion que deseas medificar
 
-1. A la hora de leer rutas, ten en cuenta esto:
-   - Si el *snippet* termina en `/`, estamos hablando de una carpeta.
-   - `ROOT/` = carpeta raíz del *Engine* (donde está el ejecutable).
-   - `MOD/` = `ROOT/mods/NOMBRE_DEL_MOD`.
-   - `SONG/` = carpeta de una canción dentro de `MOD/songs/`.
+2. La "edición" actual del *Engine* fue empezada a mediados de enero, debido a esto, hay aún cosas sujetas a cambios
 
-2. Esta "edición" del *Engine* empezó a mediados de enero, así que sí, todavía hay cosas sujetas a cambios.
-
-3. Como el *Engine* **aún** no trae editores propios, se recomienda usar los de [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) para crear algunos `.json`.
-
-## Orden real de carga (importantísimo)
-
-Cuando seleccionas un mod, el motor primero busca en tu mod y luego en `assets` base.
-
-1. `ROOT/mods/NOMBRE_DEL_MOD/...`
-2. `ROOT/assets/...`
-
-Esto te deja sobrescribir contenido base replicando la misma ruta dentro de tu mod.
+3. Debido a que el *Engine* **aún** no tiene editores, se recomienda usar los de [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) para crear algunos de los archivos `.json`
